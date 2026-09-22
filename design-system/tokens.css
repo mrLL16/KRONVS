@@ -1,0 +1,62 @@
+/* Portfolio-inspired landing page — v1.0. Proposed tokens; reference palette preserved. */
+:root {
+  color-scheme: dark;
+  --color-bg: #121212;
+  --color-surface: #1C1C1C;
+  --color-text: #F5F5F5;
+  --color-muted: #A6A6A6;
+  --color-line: #3D3D3D;
+  --color-control-border: #858585;
+  --color-inverse-bg: #F5F5F5;
+  --color-inverse-text: #121212;
+  --color-error: #FFB4AB;
+  --color-success: #B9D8BC;
+  --font-display: 'Fira Code', ui-monospace, SFMono-Regular, Consolas, monospace;
+  --font-body: 'Open Sans', system-ui, sans-serif;
+  --text-display: clamp(2.25rem, 6.6vw, 6rem);
+  --text-h2: clamp(2rem, 4.5vw, 4rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --text-body: 1rem;
+  --text-lead: 1.125rem;
+  --text-label: .875rem;
+  --text-caption: .75rem;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px;
+  --space-16: 64px; --space-24: 96px; --space-32: 128px;
+  --radius-input: 12px; --radius-card: 24px; --radius-feature: 32px; --radius-pill: 999px;
+  --container-max: 1200px;
+  --page-gutter: clamp(20px, 4vw, 64px);
+  --section-gap: clamp(64px, 8vw, 128px);
+  --duration-fast: 160ms; --duration-normal: 240ms;
+  --ease-standard: cubic-bezier(.2, 0, 0, 1);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font: 400 var(--text-body)/1.6 var(--font-body); }
+button, input, textarea { font: inherit; }
+a { color: inherit; text-underline-offset: 4px; }
+:focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; }
+.ds-container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--page-gutter); }
+.ds-display, .ds-heading { font-family: var(--font-display); font-weight: 500; letter-spacing: -.045em; }
+.ds-display { font-size: var(--text-display); line-height: 1.12; margin: 0; }
+.ds-heading { font-size: var(--text-h2); line-height: 1.2; }
+.ds-label { font: 400 var(--text-label)/1.5 var(--font-display); color: var(--color-muted); }
+.ds-button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 48px; padding: 10px 24px; border: 1px solid var(--color-text); border-radius: var(--radius-pill); background: var(--color-text); color: var(--color-bg); text-decoration: none; cursor: pointer; transition: background var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard); }
+.ds-button:hover:not(:disabled) { background: #DADADA; }
+.ds-button:active:not(:disabled) { transform: translateY(1px); }
+.ds-button.secondary { background: transparent; color: var(--color-text); border-color: var(--color-control-border); }
+.ds-button.secondary:hover:not(:disabled) { background: var(--color-line); }
+.ds-button:disabled { background: var(--color-line); border-color: var(--color-line); color: var(--color-muted); cursor: not-allowed; }
+.ds-button.round { width: 48px; padding: 0; }
+.ds-tag { display: inline-flex; padding: 4px 12px; border: 1px solid var(--color-line); border-radius: var(--radius-pill); font: 400 .75rem/1.6 var(--font-display); color: var(--color-muted); }
+.ds-card { border: 1px solid var(--color-line); border-radius: var(--radius-card); padding: 32px; }
+.ds-card h3 { font: 500 var(--text-h3)/1.4 var(--font-display); margin: 0 0 16px; }
+.ds-card p { color: var(--color-muted); }
+.ds-card.inverse { background: var(--color-inverse-bg); color: var(--color-inverse-text); }
+.ds-card.inverse p { color: #3D3D3D; }
+.ds-field { display: grid; gap: 8px; }
+.ds-field input, .ds-field textarea { width: 100%; min-height: 48px; padding: 12px 16px; border: 1px solid var(--color-control-border); border-radius: var(--radius-input); background: var(--color-bg); color: var(--color-text); font-size: 16px; }
+.ds-field input::placeholder, .ds-field textarea::placeholder { color: var(--color-muted); }
+.ds-field [aria-invalid=true] { border-color: var(--color-error); }
+.ds-error { color: var(--color-error); font-size: var(--text-label); }
+@media(max-width: 767px) { .ds-card { padding: 24px; } }
+@media(prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

@@ -1,0 +1,50 @@
+[
+  {
+    "pair": "Texto principal",
+    "foreground": "#F5F5F5",
+    "background": "#121212",
+    "contrast": 17.18,
+    "threshold": 4.5,
+    "pass": true
+  },
+  {
+    "pair": "Texto secundario",
+    "foreground": "#A6A6A6",
+    "background": "#121212",
+    "contrast": 7.7,
+    "threshold": 4.5,
+    "pass": true
+  },
+  {
+    "pair": "Texto inverso",
+    "foreground": "#121212",
+    "background": "#F5F5F5",
+    "contrast": 17.18,
+    "threshold": 4.5,
+    "pass": true
+  },
+  {
+    "pair": "Corpo inverso",
+    "foreground": "#3D3D3D",
+    "background": "#F5F5F5",
+    "contrast": 9.96,
+    "threshold": 4.5,
+    "pass": true
+  },
+  {
+    "pair": "Borda de controle",
+    "foreground": "#858585",
+    "background": "#121212",
+    "contrast": 5.08,
+    "threshold": 3,
+    "pass": true
+  },
+  {
+    "pair": "Erro",
+    "foreground": "#FFB4AB",
+    "background": "#121212",
+    "contrast": 11.03,
+    "threshold": 4.5,
+    "pass": true
+  }
+]

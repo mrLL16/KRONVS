@@ -1,0 +1,7 @@
+[
+  { "pair": "Texto sobre fundo", "foreground": "#F3F8F4", "background": "#050806", "contrast": 18.33, "target": 4.5, "pass": true },
+  { "pair": "Texto suave sobre fundo", "foreground": "#C0CEC7", "background": "#050806", "contrast": 11.98, "target": 4.5, "pass": true },
+  { "pair": "Texto discreto sobre fundo", "foreground": "#74867D", "background": "#050806", "contrast": 5.34, "target": 4.5, "pass": true },
+  { "pair": "Texto escuro no CTA", "foreground": "#050806", "background": "#B4FFD9", "contrast": 17.11, "target": 4.5, "pass": true },
+  { "pair": "Texto escuro no destaque", "foreground": "#050806", "background": "#D5FF64", "contrast": 18.46, "target": 4.5, "pass": true }
+]

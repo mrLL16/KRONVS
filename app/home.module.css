@@ -1,0 +1,613 @@
+.page {
+  min-height: 100vh;
+  padding: 112px 0 32px;
+}
+.hero {
+  width: 100%;
+  min-height: max(720px, calc(100svh - 96px));
+  margin: 0 auto;
+  padding: 32px
+    max(var(--aura-gutter), calc((100vw - var(--aura-container)) / 2)) 0;
+}
+.heroTop,
+.heroFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.heroTop {
+  padding-bottom: 48px;
+}
+.heroContent {
+  display: grid;
+  grid-template-columns: minmax(0, 8.25fr) minmax(240px, 3.75fr);
+  align-items: center;
+  min-height: clamp(520px, 64vh, 680px);
+  gap: clamp(40px, 5vw, 80px);
+}
+.hero h1,
+.section h2,
+.contact h2 {
+  line-height: 0.96;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  margin: 0;
+}
+.hero h1 {
+  max-width: 11ch;
+  font-size: clamp(3.25rem, 4.7vw, 5.25rem);
+}
+.hero h1 span,
+.section h2 span,
+.contact h2 span {
+  color: var(--aura-mint);
+}
+.heroContent .heroLead {
+  max-width: 58ch;
+  margin: 56px 0 46px;
+  color: var(--aura-text-soft);
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  line-height: 1.58;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.actions :global(a:not(.aura-button)) {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 48px;
+  padding-inline: 2px;
+  color: var(--aura-text-soft);
+}
+.actions :global(a:not(.aura-button):hover),
+.serviceLink:hover {
+  color: var(--aura-mint);
+}
+.heroPortal {
+  justify-self: center;
+  width: min(25vw, 320px);
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transform: translate3d(var(--aura-shift-x, 0), var(--aura-shift-y, 0), 0);
+  transition: transform 700ms var(--aura-ease);
+}
+.heroPortal::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 48% 52% 44% 56%;
+  background: radial-gradient(
+    circle at 38% 34%,
+    rgba(174, 255, 244, 0.42),
+    rgba(0, 161, 156, 0.13) 38%,
+    transparent 70%
+  );
+  filter: blur(3px);
+  animation: portalMorph 5.5s var(--aura-ease) infinite alternate;
+}
+.heroPortal > a {
+  position: relative;
+  z-index: 2;
+  width: 118px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  border-radius: 50%;
+  color: var(--aura-void);
+  background: rgba(174, 255, 244, 0.84);
+  box-shadow:
+    0 0 0 0 rgba(77, 219, 208, 0.24),
+    0 0 70px rgba(0, 161, 156, 0.32);
+  transition:
+    transform 500ms var(--aura-ease),
+    background 300ms,
+    box-shadow 500ms;
+}
+.heroPortal > a span {
+  font: 400 0.72rem/1 var(--aura-font-mono);
+  text-transform: uppercase;
+}
+.heroPortal:hover > a {
+  transform: scale(1.16) rotate(8deg);
+  background: var(--aura-mint);
+  box-shadow:
+    0 0 0 28px rgba(77, 219, 208, 0.07),
+    0 0 90px rgba(0, 161, 156, 0.45);
+}
+.portalRing {
+  position: absolute;
+  inset: 13%;
+  border-radius: 50%;
+  border: 1px solid rgba(77, 219, 208, 0.35);
+  animation: portalOrbit 8s linear infinite;
+}
+.portalRing:nth-of-type(2) {
+  inset: 0;
+  border-color: rgba(77, 219, 208, 0.16);
+  animation-duration: 13s;
+  animation-direction: reverse;
+}
+.heroFooter {
+  justify-content: flex-end;
+  margin-top: 16px;
+  padding: 24px 0 30px;
+  border-top: 1px solid var(--aura-line);
+  color: var(--aura-text-dim);
+}
+.section {
+  width: min(calc(100% - var(--aura-gutter) * 2), var(--aura-container));
+  margin: 0 auto;
+  padding: 128px 0;
+  border-top: 1px solid var(--aura-line);
+}
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+.sectionHeading p {
+  max-width: 380px;
+  color: var(--aura-text-soft);
+}
+.section h2 {
+  margin-top: 24px;
+  font-size: clamp(2.2rem, 4.1vw, 4.6rem);
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.services article {
+  min-height: 0;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.services h3 {
+  margin: 0 0 16px;
+  font-size: clamp(1.5rem, 2.4vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+.services p {
+  max-width: 52ch;
+  color: var(--aura-text-soft);
+}
+.serviceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 28px;
+  color: var(--aura-text);
+}
+.methodExperience {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: stretch;
+}
+.methodCard {
+  min-height: 420px;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+  border: 1px solid var(--aura-line);
+  border-radius: var(--aura-radius-md);
+  background:
+    radial-gradient(circle at 90% 8%, rgba(0, 161, 156, 0.11), transparent 38%),
+    rgba(8, 27, 21, 0.82);
+}
+.methodCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+  padding: clamp(24px, 3vw, 42px);
+  animation: methodEnter 560ms var(--aura-ease) both;
+}
+.methodCardTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.methodCard h3 {
+  margin-bottom: 16px;
+  color: var(--aura-text);
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  line-height: 0.95;
+}
+.methodInternal .methodCard h3 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+.methodCard p {
+  max-width: 31ch;
+  color: var(--aura-text-soft);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+.methodProgress {
+  height: 2px;
+  background: var(--aura-line);
+}
+.methodProgress span {
+  display: block;
+  height: 100%;
+  background: var(--aura-mint);
+  box-shadow: 0 0 16px rgba(77, 219, 208, 0.6);
+  transition: width 520ms var(--aura-ease);
+}
+.methodExplanation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding-block: clamp(10px, 2vw, 28px);
+}
+.methodExplanationStages {
+  display: grid;
+}
+.methodExplanationContent {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.methodExplanationContent.isActive {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  animation: methodEnter 560ms var(--aura-ease) both;
+}
+.methodExplanation h3 {
+  max-width: 15ch;
+  margin: 28px 0 24px;
+  color: var(--aura-text);
+  font-size: clamp(2rem, 3.2vw, 3.6rem);
+  line-height: 1.02;
+}
+.methodExplanation p {
+  max-width: 55ch;
+  font-size: clamp(1rem, 1.2vw, 1.13rem);
+  line-height: 1.62;
+}
+.methodExplanation ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.methodExplanation li {
+  padding: 8px 12px;
+  border: 1px solid var(--aura-line);
+  border-radius: 999px;
+  color: var(--aura-text-soft);
+  font: 400 0.7rem/1.3 var(--aura-font-mono);
+}
+.methodNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 36px;
+}
+.methodStepSelect {
+  display: flex;
+  gap: 9px;
+}
+.methodStepSelect button {
+  width: 34px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: width 280ms var(--aura-ease);
+}
+.methodStepSelect button::after {
+  display: block;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--aura-line-strong);
+  opacity: 0.45;
+  content: "";
+  transition: opacity 280ms, background 280ms;
+}
+.methodStepSelect button.isActive {
+  width: 54px;
+}
+.methodStepSelect button.isActive::after {
+  opacity: 1;
+  background: var(--aura-mint);
+}
+.methodArrows {
+  display: flex;
+  gap: 10px;
+}
+.methodArrows button {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--aura-line-strong);
+  border-radius: 50%;
+  color: var(--aura-text);
+  background: rgba(8, 27, 21, 0.65);
+  cursor: pointer;
+  transition: background 220ms, color 220ms, transform 220ms;
+}
+.methodArrows button:hover:not(:disabled) {
+  color: var(--aura-void);
+  background: var(--aura-mint);
+  transform: translateY(-2px);
+}
+.methodArrows button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+@keyframes methodEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.contact {
+  width: min(calc(100% - var(--aura-gutter) * 2), var(--aura-container));
+  margin: 0 auto;
+  padding: 56px 40px;
+  border-block: 1px solid var(--aura-line);
+}
+.contact h2 {
+  margin: 70px 0 48px;
+  font-size: clamp(2.35rem, 4.6vw, 5rem);
+}
+.contactRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+}
+.contactRow p {
+  max-width: 500px;
+  color: var(--aura-text-soft);
+}
+.footer {
+  width: min(calc(100% - var(--aura-gutter) * 2), var(--aura-container));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 0;
+  color: var(--aura-text-soft);
+}
+.footer span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+@keyframes portalMorph {
+  from {
+    transform: scale(0.82) rotate(-12deg);
+    border-radius: 48% 52% 44% 56%;
+  }
+  to {
+    transform: scale(1.12) rotate(15deg);
+    border-radius: 62% 38% 55% 45%;
+  }
+}
+@keyframes portalOrbit {
+  from {
+    transform: rotate(0deg) scaleY(0.68);
+  }
+  to {
+    transform: rotate(360deg) scaleY(0.68);
+  }
+}
+@media (max-width: 900px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    min-height: 560px;
+    gap: 0;
+  }
+  .hero h1 {
+    max-width: 11.5ch;
+    font-size: clamp(3rem, 7vw, 4.1rem);
+  }
+  .heroPortal {
+    display: none;
+  }
+  .methodExperience {
+    gap: 32px;
+  }
+}
+@media (max-width: 640px) {
+  .page {
+    padding-top: 112px;
+  }
+  .hero,
+  .section,
+  .contact,
+  .footer {
+    width: min(calc(100% - var(--aura-gutter) * 2), var(--aura-container));
+  }
+  .hero {
+    width: 100%;
+    min-height: max(680px, calc(100svh - 80px));
+    padding: 20px 20px 0;
+  }
+  .heroTop {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 520px;
+    padding-block: 48px 32px;
+  }
+  .hero h1 {
+    max-width: 10.5ch;
+    font-size: clamp(2.7rem, 11.8vw, 3.8rem);
+    line-height: 0.94;
+  }
+  .heroContent .heroLead {
+    margin: 38px 0 34px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+  .actions {
+    align-items: stretch;
+    gap: 16px;
+  }
+  .actions :global(.aura-button) {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .section {
+    padding: 88px 0;
+  }
+  .sectionHeading {
+    display: block;
+    margin-bottom: 32px;
+  }
+  .sectionHeading p {
+    margin-top: 24px;
+  }
+  .services,
+  .methodExperience {
+    grid-template-columns: 1fr;
+  }
+  .services article {
+    min-height: 0;
+  }
+  .methodCard,
+  .methodCardContent {
+    min-height: 300px;
+  }
+  .methodCard h3 {
+    font-size: clamp(2.8rem, 10vw, 4.4rem);
+  }
+  .methodExplanation h3 {
+    margin-top: 18px;
+  }
+  .methodNavigation {
+    padding-top: 28px;
+  }
+  .methodStepSelect {
+    gap: 5px;
+  }
+  .methodStepSelect button {
+    width: 24px;
+  }
+  .methodStepSelect button.isActive {
+    width: 38px;
+  }
+  .methodArrows button {
+    width: 46px;
+    height: 46px;
+  }
+  .methodExperience {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .methodCard,
+  .methodCardContent {
+    min-height: 184px;
+  }
+  .methodCardContent {
+    gap: 12px;
+    padding: 16px;
+  }
+  .methodCard h3,
+  .methodInternal .methodCard h3 {
+    margin-bottom: 7px;
+    font-size: clamp(1.8rem, 8vw, 2.25rem);
+  }
+  .methodCard p {
+    font-size: .91rem;
+    line-height: 1.4;
+  }
+  .methodExplanation {
+    display: contents;
+  }
+  .methodNavigation {
+    order: 1;
+    padding: 10px 0 14px;
+    gap: 12px;
+  }
+  .methodExplanationStages {
+    order: 2;
+  }
+  .methodExplanation h3 {
+    max-width: none;
+    margin: 6px 0 8px;
+    font-size: clamp(1.45rem, 6vw, 1.9rem);
+  }
+  .methodExplanation p {
+    font-size: .91rem;
+    line-height: 1.48;
+  }
+  .methodExplanation ul {
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .methodExplanation li {
+    padding: 6px 9px;
+    font-size: .62rem;
+  }
+  .methodArrows button {
+    width: 40px;
+    height: 40px;
+  }
+  .contact {
+    padding: 32px 20px;
+  }
+  .contact h2 {
+    margin: 48px 0 32px;
+  }
+  .contactRow {
+    display: block;
+  }
+  .contactRow :global(.aura-button) {
+    margin-top: 24px;
+  }
+  .footer {
+    display: block;
+  }
+  .footer span:last-child {
+    margin-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .methodCardContent,
+  .methodExplanationContent {
+    animation: none !important;
+  }
+  .methodProgress span,
+  .methodStepSelect button,
+  .methodArrows button {
+    transition: none !important;
+  }
+  .heroPortal,
+  .heroPortal::before,
+  .portalRing {
+    animation: none !important;
+    transition: none !important;
+    transform: none;
+  }
+}
