@@ -1,0 +1,104 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+.track {
+  position: relative;
+  /* 2 animation phases (0→viewH, viewH→2×viewH) plus a short hold at full
+     coverage so the release into the next section isn't an abrupt cut. */
+  height: 230vh;
+}
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--aura-void);
+  padding: 32px max(var(--aura-gutter), calc((100vw - var(--aura-container)) / 2));
+}
+.ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  border-radius: 50%;
+  background: var(--aura-text);
+  mix-blend-mode: difference;
+  will-change: transform, width, height;
+}
+.layer {
+  position: relative;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+.title {
+  margin: 0;
+  max-width: 11ch;
+  font-size: clamp(3.25rem, 4.7vw, 5.25rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.07em;
+}
+.title span {
+  color: var(--aura-mint);
+}
+.lead {
+  max-width: 58ch;
+  color: var(--aura-text-soft);
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  line-height: 1.58;
+}
+.actions {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.actions :global(a:not(.aura-button)) {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--aura-text-soft);
+}
+.actions :global(a:not(.aura-button):hover) {
+  color: var(--aura-mint);
+}
+
+@media (max-width: 640px) {
+  .title {
+    max-width: 10.5ch;
+    font-size: clamp(2.7rem, 11.8vw, 3.8rem);
+    line-height: 0.94;
+  }
+  .lead {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .actions :global(.aura-button) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ball {
+    transition: none;
+  }
+}

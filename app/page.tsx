@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { ContactLink } from "@/components/ui/contact-link";
 import { PageShell } from "@/components/layout/page-shell";
 import { HomeMethod } from "@/components/sections/home-method";
+import { InversionHero } from "@/components/sections/inversion-hero";
 import { pageMetadata } from "@/lib/metadata";
 import { company } from "@/data/company";
 import styles from "./home.module.css";
@@ -30,52 +31,7 @@ export default function Home() {
         }}
       />
       <div className={`aura-scope aura-home ${styles.page}`}>
-        <section className={`${styles.hero} aura-mesh`} id="top">
-          <div className={styles.heroTop} data-motion-hero-meta>
-            <span className="aura-mono aura-muted">
-              KRONVS / ENGENHARIA · TECNOLOGIA
-            </span>
-          </div>
-          <div className={styles.heroContent}>
-            <div>
-              <h1 data-motion-hero-title>
-                Problemas complexos.
-                <br />
-                <span>Soluções para executar.</span>
-              </h1>
-              <p className={styles.heroLead} data-motion-hero-lead>
-                Engenharia, tecnologia e método para projetar instalações,
-                estruturar operações e desenvolver sistemas sob medida. Da
-                decisão técnica ao controle do negócio.
-              </p>
-              <div className={styles.actions} data-motion-hero-actions>
-                <a className="aura-button" href="#solucoes" data-smooth-scroll>
-                  Conhecer soluções{" "}
-                  <ArrowDownRight size={18} aria-hidden="true" />
-                </a>
-                <ContactLink variant="text" location="home-hero">
-                  Falar com a KRONVS
-                </ContactLink>
-              </div>
-            </div>
-            <div
-              className={styles.heroPortal}
-              data-aura-interactive
-              data-aura-float
-              data-motion-hero-visual
-            >
-              <span className={styles.portalRing} aria-hidden="true" />
-              <span className={styles.portalRing} aria-hidden="true" />
-              <a href="#solucoes" data-smooth-scroll aria-label="Explorar as soluções KRONVS">
-                <span>Explorar</span>
-                <ArrowDownRight size={26} aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-          <div className={styles.heroFooter}>
-            <span className="aura-mono">01 — 03</span>
-          </div>
-        </section>
+        <InversionHero />
         <section
           id="solucoes"
           className={`${styles.section} ${styles.solutions}`}
@@ -84,9 +40,9 @@ export default function Home() {
             <div>
               <span className="aura-mono aura-muted">01 / SOLUÇÕES</span>
               <h2>
-                Duas frentes.
+                Duas frentes de atuação.
                 <br />
-                <span>Uma necessidade bem resolvida.</span>
+                <span>Contratadas juntas ou separadas.</span>
               </h2>
             </div>
           </div>

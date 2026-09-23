@@ -26,7 +26,7 @@ export default function SystemsPage() {
       </PageHero>
       <SystemShowcase />
       <ServiceGrid
-        title="Tecnologia para resolver o trabalho de todos os dias."
+        title="Soluções em Tecnologia"
         items={systemServices}
       />
       <AuthorialSystems />

@@ -125,6 +125,9 @@ export function SiteMotion() {
         );
 
         if (hero) {
+          const visual = hero.querySelector<HTMLElement>(
+            "[data-motion-hero-visual]",
+          );
           const heroTimeline = gsap.timeline({
             defaults: { ease: "power4.out" },
           });
@@ -158,17 +161,13 @@ export function SiteMotion() {
               hero.querySelector("[data-motion-hero-actions]"),
               { autoAlpha: 0, y: 28, duration: 0.74 },
               "-=0.48",
-            )
-            .from(
-              hero.querySelector("[data-motion-hero-visual]"),
+            );
+          if (visual) {
+            heroTimeline.from(
+              visual,
               { autoAlpha: 0, scale: 0.92, y: 24, duration: 0.9 },
               "-=0.74",
             );
-
-          const visual = hero.querySelector<HTMLElement>(
-            "[data-motion-hero-visual]",
-          );
-          if (visual) {
             gsap.to(visual, {
               yPercent: 8,
               scale: 1.045,

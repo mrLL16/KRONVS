@@ -14,56 +14,56 @@ export const engineeringServices: ServiceItem[] = [
   {
     title: "HVAC e Climatização",
     description:
-      "Análise da instalação como um sistema: carga térmica, equipamentos, distribuição de ar e desempenho.",
+      "Análise e revisão de projetos de HVAC, levantamentos e as built, com acompanhamento técnico de instalações e adequações em ambientes com requisitos específicos de climatização, como unidades hospitalares e assistenciais.",
     items: [
-      "VRF, expansão direta, UTAs e fan coils",
-      "Ventilação, exaustão e pressurização",
-      "Carga térmica e avaliação de desempenho",
-      "Projetos e suporte técnico em ambientes críticos",
+      "Revisão de projetos frente a normas como RDC 50, NBR 7256 e NBR 16401",
+      "Levantamentos técnicos e elaboração de as built",
+      "Acompanhamento de instalações e adequações",
+      "Identificação de incompatibilidades e necessidades técnicas",
     ],
   },
   {
     title: "Planejamento e Gestão de Obras",
     description:
-      "Organização de prazos, interfaces e entregáveis para acompanhar o que foi previsto e o que está em execução.",
+      "Estruturação de prazos, atividades e entregáveis, com acompanhamento físico da obra e apoio técnico à tomada de decisão durante a execução.",
     items: [
       "Cronogramas e planejamento executivo",
-      "Controle de avanço e pendências",
-      "Interferências e coordenação de disciplinas",
-      "Acompanhamento de entregáveis",
+      "Acompanhamento físico e controle de prazos",
+      "Compatibilização entre disciplinas e gestão de pendências",
+      "Apoio técnico à tomada de decisão",
     ],
   },
   {
     title: "Consultoria Técnica",
     description:
-      "Informações e critérios para comparar alternativas e fundamentar decisões.",
+      "Apoio técnico para analisar problemas, avaliar cenários e identificar oportunidades de melhoria, com soluções aplicáveis à realidade de cada operação ou projeto.",
     items: [
       "Diagnósticos e análise de problemas",
-      "Pareceres e avaliação de alternativas",
+      "Avaliação de cenários e alternativas técnicas",
       "Estudos de viabilidade",
-      "Apoio à contratação e à tomada de decisão",
+      "Apoio à tomada de decisão e à contratação",
     ],
   },
   {
-    title: "Facilities e Manutenção",
+    title: "Engenharia de Manutenção",
     description:
-      "Estruturação das rotinas de manutenção e da gestão operacional de ativos.",
+      "Estruturação da manutenção a partir do diagnóstico da operação atual, organizando rotinas, prioridades e indicadores para uma gestão mais previsível.",
     items: [
-      "Planos preventivos e análise de ativos",
-      "Procedimentos e indicadores",
-      "Organização de rotinas",
-      "Melhoria de processos operacionais",
+      "Diagnóstico da operação e levantamento de ativos",
+      "Identificação de gargalos, riscos e oportunidades de melhoria",
+      "Definição de fluxos, rotinas e indicadores",
+      "Plano estruturado de manutenção e acompanhamento",
     ],
   },
   {
     title: "Engenharia de Processos",
     description:
-      "Revisão de como o trabalho acontece, das entradas de informação às entregas.",
+      "Mapeamento de processos para identificar gargalos e retrabalho, com padronização de fluxos e procedimentos que melhoram a eficiência operacional.",
     items: [
-      "Análise de fluxos",
+      "Mapeamento de processos e identificação de gargalos",
       "Padronização e procedimentos",
-      "Organização operacional",
-      "Definição de indicadores de eficiência",
+      "Organização de fluxos operacionais",
+      "Indicadores de eficiência e redução de retrabalho",
     ],
   },
 ];

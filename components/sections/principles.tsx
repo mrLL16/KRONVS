@@ -29,9 +29,9 @@ export function Principles() {
     >
       <SectionIndex number="07">PRINCÍPIOS</SectionIndex>
       <h2 id="principles-title">
-        Duas frentes.
+        Princípios de trabalho.
         <br />
-        <span className="muted">O mesmo compromisso.</span>
+        <span className="muted">Válidos para as duas frentes.</span>
       </h2>
       <div className="principles-list">
         {principles.map(([title, text], i) => (

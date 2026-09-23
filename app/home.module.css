@@ -2,30 +2,6 @@
   min-height: 100vh;
   padding: 112px 0 32px;
 }
-.hero {
-  width: 100%;
-  min-height: max(720px, calc(100svh - 96px));
-  margin: 0 auto;
-  padding: 32px
-    max(var(--aura-gutter), calc((100vw - var(--aura-container)) / 2)) 0;
-}
-.heroTop,
-.heroFooter {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-.heroTop {
-  padding-bottom: 48px;
-}
-.heroContent {
-  display: grid;
-  grid-template-columns: minmax(0, 8.25fr) minmax(240px, 3.75fr);
-  align-items: center;
-  min-height: clamp(520px, 64vh, 680px);
-  gap: clamp(40px, 5vw, 80px);
-}
-.hero h1,
 .section h2,
 .contact h2 {
   line-height: 0.96;
@@ -33,114 +9,12 @@
   letter-spacing: -0.07em;
   margin: 0;
 }
-.hero h1 {
-  max-width: 11ch;
-  font-size: clamp(3.25rem, 4.7vw, 5.25rem);
-}
-.hero h1 span,
 .section h2 span,
 .contact h2 span {
   color: var(--aura-mint);
 }
-.heroContent .heroLead {
-  max-width: 58ch;
-  margin: 56px 0 46px;
-  color: var(--aura-text-soft);
-  font-size: clamp(1rem, 1.25vw, 1.18rem);
-  line-height: 1.58;
-}
-.actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 32px;
-}
-.actions :global(a:not(.aura-button)) {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  min-height: 48px;
-  padding-inline: 2px;
-  color: var(--aura-text-soft);
-}
-.actions :global(a:not(.aura-button):hover),
 .serviceLink:hover {
   color: var(--aura-mint);
-}
-.heroPortal {
-  justify-self: center;
-  width: min(25vw, 320px);
-  aspect-ratio: 1;
-  position: relative;
-  display: grid;
-  place-items: center;
-  transform: translate3d(var(--aura-shift-x, 0), var(--aura-shift-y, 0), 0);
-  transition: transform 700ms var(--aura-ease);
-}
-.heroPortal::before {
-  content: "";
-  position: absolute;
-  inset: 12%;
-  border-radius: 48% 52% 44% 56%;
-  background: radial-gradient(
-    circle at 38% 34%,
-    rgba(174, 255, 244, 0.42),
-    rgba(0, 161, 156, 0.13) 38%,
-    transparent 70%
-  );
-  filter: blur(3px);
-  animation: portalMorph 5.5s var(--aura-ease) infinite alternate;
-}
-.heroPortal > a {
-  position: relative;
-  z-index: 2;
-  width: 118px;
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 8px;
-  border-radius: 50%;
-  color: var(--aura-void);
-  background: rgba(174, 255, 244, 0.84);
-  box-shadow:
-    0 0 0 0 rgba(77, 219, 208, 0.24),
-    0 0 70px rgba(0, 161, 156, 0.32);
-  transition:
-    transform 500ms var(--aura-ease),
-    background 300ms,
-    box-shadow 500ms;
-}
-.heroPortal > a span {
-  font: 400 0.72rem/1 var(--aura-font-mono);
-  text-transform: uppercase;
-}
-.heroPortal:hover > a {
-  transform: scale(1.16) rotate(8deg);
-  background: var(--aura-mint);
-  box-shadow:
-    0 0 0 28px rgba(77, 219, 208, 0.07),
-    0 0 90px rgba(0, 161, 156, 0.45);
-}
-.portalRing {
-  position: absolute;
-  inset: 13%;
-  border-radius: 50%;
-  border: 1px solid rgba(77, 219, 208, 0.35);
-  animation: portalOrbit 8s linear infinite;
-}
-.portalRing:nth-of-type(2) {
-  inset: 0;
-  border-color: rgba(77, 219, 208, 0.16);
-  animation-duration: 13s;
-  animation-direction: reverse;
-}
-.heroFooter {
-  justify-content: flex-end;
-  margin-top: 16px;
-  padding: 24px 0 30px;
-  border-top: 1px solid var(--aura-line);
-  color: var(--aura-text-dim);
 }
 .section {
   width: min(calc(100% - var(--aura-gutter) * 2), var(--aura-container));
@@ -396,37 +270,7 @@
   align-items: center;
   gap: 8px;
 }
-@keyframes portalMorph {
-  from {
-    transform: scale(0.82) rotate(-12deg);
-    border-radius: 48% 52% 44% 56%;
-  }
-  to {
-    transform: scale(1.12) rotate(15deg);
-    border-radius: 62% 38% 55% 45%;
-  }
-}
-@keyframes portalOrbit {
-  from {
-    transform: rotate(0deg) scaleY(0.68);
-  }
-  to {
-    transform: rotate(360deg) scaleY(0.68);
-  }
-}
 @media (max-width: 900px) {
-  .heroContent {
-    grid-template-columns: 1fr;
-    min-height: 560px;
-    gap: 0;
-  }
-  .hero h1 {
-    max-width: 11.5ch;
-    font-size: clamp(3rem, 7vw, 4.1rem);
-  }
-  .heroPortal {
-    display: none;
-  }
   .methodExperience {
     gap: 32px;
   }
@@ -435,46 +279,10 @@
   .page {
     padding-top: 112px;
   }
-  .hero,
   .section,
   .contact,
   .footer {
     width: min(calc(100% - var(--aura-gutter) * 2), var(--aura-container));
-  }
-  .hero {
-    width: 100%;
-    min-height: max(680px, calc(100svh - 80px));
-    padding: 20px 20px 0;
-  }
-  .heroTop {
-    flex-direction: column;
-    gap: 8px;
-  }
-  .heroContent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 520px;
-    padding-block: 48px 32px;
-  }
-  .hero h1 {
-    max-width: 10.5ch;
-    font-size: clamp(2.7rem, 11.8vw, 3.8rem);
-    line-height: 0.94;
-  }
-  .heroContent .heroLead {
-    margin: 38px 0 34px;
-    font-size: 0.98rem;
-    line-height: 1.55;
-  }
-  .actions {
-    align-items: stretch;
-    gap: 16px;
-  }
-  .actions :global(.aura-button) {
-    width: 100%;
-    justify-content: space-between;
   }
   .section {
     padding: 88px 0;
@@ -602,12 +410,5 @@
   .methodStepSelect button,
   .methodArrows button {
     transition: none !important;
-  }
-  .heroPortal,
-  .heroPortal::before,
-  .portalRing {
-    animation: none !important;
-    transition: none !important;
-    transform: none;
   }
 }

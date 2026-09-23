@@ -24,7 +24,7 @@ export default function EngineeringPage() {
         <ContactLink intent="engineering">Apresentar meu projeto</ContactLink>
       </PageHero>
       <ServiceGrid
-        title="Da análise técnica à aplicação em campo."
+        title="Soluções em Engenharia"
         items={engineeringServices}
       />
       <EngineeringProcess />
@@ -41,7 +41,7 @@ export default function EngineeringPage() {
             "Clínicas e hospitais",
             "Indústrias",
             "Operações comerciais",
-            "Facilities",
+            "Manutenção",
             "Obras",
             "Retrofit",
             "Expansão",
