@@ -7,11 +7,25 @@ import { AuthorialSystems } from "@/components/sections/authorial-systems";
 import { CTASection } from "@/components/sections/cta-section";
 import { ContactLink } from "@/components/ui/contact-link";
 import { sistemasContent as c } from "@/content";
+import { JsonLd } from "@/components/ui/json-ld";
+import { company } from "@/data/company";
 import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata(c.seo.title, c.seo.description, "/sistemas");
 export default function SystemsPage() {
   return (
     <PageShell>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: `${company.fullName} — ${c.hero.title}`,
+          description: c.seo.description,
+          ...(company.siteUrl ? { url: new URL("/sistemas", company.siteUrl).href } : {}),
+          areaServed: "BR",
+          provider: { "@type": "Organization", name: company.fullName },
+          serviceType: c.services.cards.map((card) => card.title),
+        }}
+      />
       <PageHero
         signal="systems"
         eyebrow={c.hero.eyebrow}

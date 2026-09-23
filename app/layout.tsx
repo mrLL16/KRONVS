@@ -8,7 +8,6 @@ import { AuraInteractions } from "@/components/ui/aura-interactions";
 import { SiteMotion } from "@/components/ui/site-motion";
 const siteUrl = company.siteUrl ? new URL(company.siteUrl) : undefined;
 export const metadata: Metadata = {
-  icons: { icon: "data:," },
   title: globalContent.seo.title,
   description: globalContent.seo.description,
   ...(siteUrl ? { metadataBase: siteUrl, alternates: { canonical: "/" } } : {}),
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "KRONVS",
     ...(siteUrl ? { url: siteUrl } : {}),
   },
-  twitter: { card: "summary", title: company.fullName, description: globalContent.seo.description },
+  twitter: { card: "summary_large_image", title: company.fullName, description: globalContent.seo.description },
   robots: { index: Boolean(siteUrl), follow: Boolean(siteUrl) },
 };
 export default function RootLayout({

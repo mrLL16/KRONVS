@@ -214,6 +214,12 @@ body.aura-route-entering .aura-site > * {
   line-height: 1.1;
 }
 
+/* Título da timeline (h1 na página Sobre) mantém o tamanho que tinha como h2. */
+.aura-site h1.journey-title {
+  font-size: clamp(2.5rem, 5.4vw, 6rem);
+  line-height: 0.98;
+}
+
 .aura-site p,
 .aura-site li {
   color: var(--aura-text-soft);

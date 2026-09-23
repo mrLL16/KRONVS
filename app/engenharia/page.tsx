@@ -6,11 +6,25 @@ import { Projects } from "@/components/sections/projects";
 import { CTASection } from "@/components/sections/cta-section";
 import { ContactLink } from "@/components/ui/contact-link";
 import { engenhariaContent as c } from "@/content";
+import { JsonLd } from "@/components/ui/json-ld";
+import { company } from "@/data/company";
 import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata(c.seo.title, c.seo.description, "/engenharia");
 export default function EngineeringPage() {
   return (
     <PageShell>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: `${company.fullName} — ${c.hero.title}`,
+          description: c.seo.description,
+          ...(company.siteUrl ? { url: new URL("/engenharia", company.siteUrl).href } : {}),
+          areaServed: "BR",
+          provider: { "@type": "Organization", name: company.fullName },
+          serviceType: c.services.cards.map((card) => card.title),
+        }}
+      />
       <PageHero
         signal="engineering"
         eyebrow={c.hero.eyebrow}

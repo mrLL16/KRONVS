@@ -406,9 +406,9 @@ export function JourneyTimeline() {
 
             <div className="flex h-1/2 w-full items-center justify-start gap-[.5vw]">
               <div className="h-full w-[clamp(240px,22vw,340px)] shrink-0 pt-[2vw] max-[600px]:h-fit max-[600px]:w-[36vw] max-[600px]:pt-[5vw]">
-                <h2 className="w-full break-normal text-[2.5vw] leading-[1.05] max-[600px]:text-[8.5vw]" style={{ color: textColor }}>
+                <h1 className="journey-title w-full break-normal text-[2.5vw] leading-[1.05] max-[600px]:text-[8.5vw]" style={{ color: textColor }}>
                   {sobreContent.timeline.title}
-                </h2>
+                </h1>
               </div>
 
               <div className="flex-1 flex h-full gap-x-[clamp(110px,14vw,190px)] max-[600px]:gap-x-[34vw]">
