@@ -254,20 +254,59 @@ export function JourneyTimeline() {
     // measured content height instead of a single guessed value: content
     // length varies a lot between milestones (a one-line vs. five-line
     // description), so a fixed height either strands the dot far below
-    // short entries or buries it inside long ones.
+    // short entries or buries it inside long ones. The height is capped to
+    // the viewport's remaining space (minus a small safety margin): the
+    // sticky section wrapper is h-screen with overflow-hidden, so on short
+    // wide windows an uncapped height can push the dot past the visible
+    // area and clip it out entirely.
+    //
+    // Driven by a ResizeObserver plus a scroll listener (not a one-shot
+    // measurement): the connector's own text can resize (ResizeObserver),
+    // and the section's sticky wrapper isn't pinned yet at mount time so
+    // its measured top shifts once the user actually scrolls it into its
+    // pinned position (scroll listener, see below).
+    let bottomConnectorObserver: ResizeObserver | undefined;
+    let syncBottomConnectorHeights: (() => void) | undefined;
+    const bottomConnectorCleanup: Array<() => void> = [];
     if (window.innerWidth >= 600) {
       const dotMargin = 28;
+      const viewportSafety = 16;
+      const entries: Array<{ connector: HTMLElement; description: Element }> = [];
       bottomJourneyData.forEach((item) => {
         const connector = section.querySelector<HTMLElement>(`.connector-${item.id}`);
         const description = section.querySelector(`.description-${item.id}`);
-        if (!connector || !description) return;
-        const connectorTop = connector.getBoundingClientRect().top;
-        const contentBottom = description.getBoundingClientRect().bottom;
-        const height = contentBottom - connectorTop + dotMargin;
-        if (height > 0) {
-          gsap.set(connector, { height });
-        }
+        if (connector && description) entries.push({ connector, description });
       });
+
+      const syncConnectorHeights = () => {
+        entries.forEach(({ connector, description }) => {
+          const connectorTop = connector.getBoundingClientRect().top;
+          const contentBottom = description.getBoundingClientRect().bottom;
+          const desiredHeight = contentBottom - connectorTop + dotMargin;
+          const maxHeight = window.innerHeight - connectorTop - viewportSafety;
+          const height = Math.min(desiredHeight, maxHeight);
+          if (height > 0) connector.style.height = `${height}px`;
+        });
+      };
+
+      bottomConnectorObserver = new ResizeObserver(syncConnectorHeights);
+      entries.forEach(({ description }) => bottomConnectorObserver!.observe(description));
+      syncConnectorHeights();
+      syncBottomConnectorHeights = syncConnectorHeights;
+
+      // The section's sticky wrapper isn't "stuck" yet at mount (scrollY is
+      // usually 0 there), so connector.getBoundingClientRect().top at this
+      // point reflects the section's normal in-flow position, not its
+      // pinned one - which is ~100px higher once position:sticky actually
+      // engages. Re-measuring on every scroll event keeps the connector
+      // height correct once the section pins, instead of freezing it at a
+      // stale pre-pin value that never gets revisited. Unthrottled: it's
+      // three getBoundingClientRect() reads, cheap enough for a scroll
+      // handler, and rAF-based throttling here is unreliable in backgrounded
+      // tabs (rAF callbacks can be paused indefinitely while hidden).
+      const handleScrollSync = () => syncConnectorHeights();
+      window.addEventListener("scroll", handleScrollSync, { passive: true });
+      bottomConnectorCleanup.push(() => window.removeEventListener("scroll", handleScrollSync));
     }
 
     const titleSplits: Partial<Record<string, SplitTextInstance>> = {};
@@ -368,13 +407,18 @@ export function JourneyTimeline() {
       createItemTimeline(item, startPos, endPos);
     });
 
-    const handleResize = () => ScrollTrigger.refresh();
+    const handleResize = () => {
+      syncBottomConnectorHeights?.();
+      ScrollTrigger.refresh();
+    };
     window.addEventListener("resize", handleResize);
 
     return () => {
       Object.values(titleSplits).forEach((split) => split?.revert?.());
       Object.values(descriptionSplits).forEach((split) => split?.revert?.());
       window.removeEventListener("resize", handleResize);
+      bottomConnectorObserver?.disconnect();
+      bottomConnectorCleanup.forEach((fn) => fn());
     };
   }, { dependencies: [reducedMotion], scope: sectionRef });
 
@@ -385,7 +429,7 @@ export function JourneyTimeline() {
       className="h-[220vw] max-[600px]:h-[380vh] w-full relative"
       style={sectionStyle}
     >
-      <div className="h-screen w-screen sticky top-[0%] pt-[10%] overflow-hidden max-[600px]:top-[5%]">
+      <div className="h-screen w-screen sticky top-[0%] pt-[min(10%,8vh)] overflow-hidden max-[600px]:top-[5%] max-[600px]:pt-[10%]">
         <div
           ref={wholeSliderRef}
           className="mr-[2vw] flex h-[clamp(420px,48vw,1060px)] w-[clamp(1300px,140vw,1680px)] items-center gap-[5vw] px-[5vw] max-[600px]:h-[clamp(480px,66vh,560px)] max-[600px]:w-[520vw] max-[600px]:px-[7vw]"
