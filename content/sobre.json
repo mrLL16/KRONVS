@@ -1,0 +1,55 @@
+{
+  "seo": {
+    "title": "Sobre a KRONVS",
+    "description": "A trajetória da KRONVS: do início das operações em 2022 à atuação integrada entre engenharia, consultoria e tecnologia."
+  },
+  "timeline": {
+    "title": "Nossa trajetória",
+    "rangeLabel": "2022 — 2026",
+    "milestones": [
+      {
+        "date": "jul. 2022",
+        "title": "Início das operações",
+        "brand": "",
+        "description": "Início das atividades em engenharia, gerenciamento de obras, planejamento, manutenção, projetos, processos e consultorias técnicas."
+      },
+      {
+        "date": "jan. 2023",
+        "title": "Projeto de grande porte",
+        "brand": "",
+        "description": "Participação em projeto de grande porte em multinacional, ampliando a experiência em planejamento, acompanhamento técnico, coordenação de atividades e gestão da execução."
+      },
+      {
+        "date": "jun. 2024",
+        "title": "Expansão da atuação",
+        "brand": "",
+        "description": "Ampliação da atuação em projetos para empresas de diferentes segmentos, envolvendo gerenciamento de obras, consultorias, retrofit, modernização de equipamentos e melhoria de processos."
+      },
+      {
+        "date": "ago. 2025",
+        "title": "Integração entre engenharia e processos",
+        "brand": "",
+        "description": "Evolução dos serviços com maior integração entre engenharia, processos, planejamento e análise operacional, buscando soluções mais eficientes e aderentes à realidade de cada cliente."
+      },
+      {
+        "date": "mai. 2026",
+        "title": "Tecnologia aplicada aos negócios",
+        "brand": "",
+        "description": "Desenvolvimento de soluções digitais e sistemas personalizados, incorporando tecnologia à experiência acumulada em engenharia, gestão e processos."
+      },
+      {
+        "date": "set. 2026",
+        "title": "Uma nova fase",
+        "brand": "KRONVS | Engenharia & Consultoria",
+        "description": "A trajetória iniciada em 2022 evolui para uma nova marca, com escopo ampliado, processos mais estruturados e atuação integrada entre engenharia, consultoria, processos e tecnologia."
+      }
+    ]
+  },
+  "author": {
+    "titleLine1": "Esta página foi desenvolvida",
+    "titleLine2Highlight": "100% pela KRONVS.",
+    "textLine1": "O site reúne exemplos da nossa forma de trabalhar.",
+    "textLine2": "Cada projeto começa pela compreensão do seu contexto.",
+    "button": "Quero conversar sobre minha ideia"
+  }
+}

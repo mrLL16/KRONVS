@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { globalContent } from "@/content";
 import { ChevronDown, ArrowUpRight } from "lucide-react";
 export function SolutionsDropdown({
   pathname,
@@ -57,7 +58,7 @@ export function SolutionsDropdown({
         aria-controls="solutions-menu"
         onClick={() => setOpen(!open)}
       >
-        Soluções
+        {globalContent.nav.solutions}
         <ChevronDown
           size={14}
           aria-hidden="true"
@@ -77,7 +78,7 @@ export function SolutionsDropdown({
             onNavigate();
           }}
         >
-          <strong>Engenharia</strong>
+          <strong>{globalContent.nav.engineering}</strong>
           <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
         <Link
@@ -88,7 +89,7 @@ export function SolutionsDropdown({
             onNavigate();
           }}
         >
-          <strong>Sistemas</strong>
+          <strong>{globalContent.nav.systems}</strong>
           <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
       </div>

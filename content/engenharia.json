@@ -1,0 +1,163 @@
+{
+  "seo": {
+    "title": "Engenharia & Consultoria | KRONVS",
+    "description": "Projetos, ART, planejamento, gestão de obras, manutenção e consultoria técnica para instalações e operações."
+  },
+  "hero": {
+    "eyebrow": "KRONVS | ENGENHARIA",
+    "title": "Engenharia & Consultoria",
+    "description": "Soluções técnicas para projetos, instalações, obras e operações que exigem método, controle e responsabilidade.",
+    "button": "Falar sobre minha necessidade"
+  },
+  "services": {
+    "title": "Soluções em Engenharia",
+    "cards": [
+      {
+        "title": "Projetos de Engenharia",
+        "description": "Soluções técnicas e documentação completa para projetar, adequar e executar instalações com segurança, eficiência e conformidade.",
+        "items": [
+          "Desenvolvimento e adequações",
+          "Estudos e compatibilização",
+          "Especificações e memoriais",
+          "Suporte técnico à execução"
+        ]
+      },
+      {
+        "title": "Projetos de HVAC",
+        "description": "Análise e revisão de projetos de HVAC, levantamentos e as built, com acompanhamento técnico de instalações e adequações em ambientes com requisitos específicos de climatização, como unidades hospitalares, assistenciais de médio e grande porte.",
+        "items": [
+          "Normas RDC 50, NBR 7256 e NBR 16401",
+          "Levantamentos e elaboração de as built",
+          "Acompanhamento de implantações",
+          "Identificação de incompatibilidades"
+        ]
+      },
+      {
+        "title": "Planejamento e Gestão de Obras",
+        "description": "Estruturação de prazos, atividades e entregáveis, com acompanhamento físico da obra e apoio técnico à tomada de decisão durante a execução.",
+        "items": [
+          "Cronogramas e planejamento executivo",
+          "Acompanhamento e controle de prazos",
+          "Compatibilização de disciplinas",
+          "Apoio técnico à tomada de decisão"
+        ]
+      },
+      {
+        "title": "Consultoria Técnica",
+        "description": "Apoio técnico para analisar problemas, avaliar cenários e identificar oportunidades de melhoria, com soluções aplicáveis à realidade de cada operação ou projeto.",
+        "items": [
+          "Diagnósticos e análise de problemas",
+          "Avaliação de cenários e alternativas",
+          "Estudos de viabilidade",
+          "Apoio à tomada de decisão e à contratação"
+        ]
+      },
+      {
+        "title": "Engenharia de Manutenção",
+        "description": "Estruturação da manutenção a partir do diagnóstico da operação atual, organizando rotinas, prioridades e indicadores para uma gestão mais previsível.",
+        "items": [
+          "Diagnóstico da operação e levantamentos",
+          "Identificação de oportunidades de melhoria",
+          "Definição de fluxos, rotinas e indicadores",
+          "Plano estruturado de manutenção"
+        ]
+      },
+      {
+        "title": "Engenharia de Processos",
+        "description": "Mapeamento de processos para identificar gargalos e retrabalho, com padronização de fluxos e procedimentos que melhoram a eficiência operacional.",
+        "items": [
+          "Mapeamento de processos ",
+          "Padronização e procedimentos",
+          "Organização de fluxos operacionais",
+          "Indicadores de eficiência "
+        ]
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "02 / PROCESSO",
+    "title": "Como conduzimos o trabalho.",
+    "steps": [
+      {
+        "title": "Diagnóstico",
+        "detailTitle": "Compreender antes de definir.",
+        "summary": "Entender o problema, o contexto, as restrições e os objetivos.",
+        "explanation": "Identificamos a necessidade técnica, as condições de operação e as decisões que o projeto precisa sustentar. O diagnóstico delimita o problema antes de escolher uma solução.",
+        "points": [
+          "Objetivos e restrições",
+          "Critérios de decisão"
+        ]
+      },
+      {
+        "title": "Levantamento",
+        "detailTitle": "Reunir a base técnica.",
+        "summary": "Reunir projetos, documentos, medições e condições de campo.",
+        "explanation": "Consolidamos as informações disponíveis e verificamos o que ainda precisa ser levantado. Essa base permite reconhecer interferências, lacunas e premissas que afetam o desenvolvimento.",
+        "points": [
+          "Documentos e medições",
+          "Condições de campo"
+        ]
+      },
+      {
+        "title": "Estruturação",
+        "detailTitle": "Definir o caminho de execução.",
+        "summary": "Definir metodologia, escopo, premissas e entregáveis.",
+        "explanation": "Organizamos as etapas, os critérios técnicos e os entregáveis do trabalho. O escopo deixa claro o que será analisado, desenvolvido e validado.",
+        "points": [
+          "Escopo e premissas",
+          "Etapas e entregáveis"
+        ]
+      },
+      {
+        "title": "Desenvolvimento",
+        "detailTitle": "Desenvolver a solução técnica.",
+        "summary": "Executar estudos, projetos, planejamento ou consultoria.",
+        "explanation": "Produzimos os estudos, projetos ou análises previstos no escopo, confrontando as alternativas com os requisitos do projeto e as condições de execução.",
+        "points": [
+          "Estudos e projetos",
+          "Análise de alternativas"
+        ]
+      },
+      {
+        "title": "Implementação",
+        "detailTitle": "Apoiar a aplicação em campo.",
+        "summary": "Acompanhar a aplicação da solução, quando incluído no escopo.",
+        "explanation": "Quando contratado, acompanhamos a aplicação para esclarecer decisões técnicas e tratar ajustes decorrentes das condições encontradas durante a execução.",
+        "points": [
+          "Apoio à execução",
+          "Tratamento de ajustes"
+        ]
+      },
+      {
+        "title": "Controle",
+        "detailTitle": "Registrar e acompanhar.",
+        "summary": "Revisar resultados, ajustes e documentação conforme a contratação.",
+        "explanation": "Conferimos os resultados pertinentes ao escopo, registramos ajustes e organizamos a documentação necessária para dar continuidade à operação ou às próximas etapas.",
+        "points": [
+          "Verificação de resultados",
+          "Documentação técnica"
+        ]
+      }
+    ]
+  },
+  "applications": {
+    "title": "Contextos de aplicação.",
+    "text": "As soluções podem ser avaliadas para estes ambientes e necessidades. O escopo depende das condições do projeto e dos requisitos técnicos aplicáveis.",
+    "tags": [
+      "Empresas e escritórios",
+      "Clínicas e hospitais",
+      "Indústrias",
+      "Operações comerciais",
+      "Manutenção",
+      "Obras",
+      "Retrofit",
+      "Expansão",
+      "Adequação de instalações"
+    ]
+  },
+  "cta": {
+    "title": "Precisa estruturar uma solução técnica?",
+    "text": "Apresente o projeto, a instalação ou a necessidade que precisa de apoio técnico.",
+    "button": "Apresentar meu projeto"
+  }
+}

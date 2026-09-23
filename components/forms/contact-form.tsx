@@ -4,6 +4,7 @@ import { useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { company } from "@/data/company";
+import { contatoContent } from "@/content";
 import {
   buildContactMessage,
   buildWhatsAppUrl,
@@ -14,6 +15,7 @@ import {
 } from "@/lib/contact";
 import { track } from "@/lib/analytics";
 const subscribe = () => () => {};
+const form_ = contatoContent.form;
 export function ContactForm() {
   const params = useSearchParams();
   const intent = params.get("necessidade");
@@ -33,11 +35,11 @@ function ContactFormContent({ intent }: { intent: string | null }) {
   const configured = Boolean(buildWhatsAppUrl(company.whatsapp, ""));
   const initialNeed =
     intent === "engineering"
-      ? "Engenharia"
+      ? form_.defaultForEngineering
       : intent === "systems"
-        ? "Sistemas / Tecnologia"
+        ? form_.defaultForSystems
         : intent === "both"
-          ? "Outro"
+          ? form_.defaultForBoth
           : "";
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -49,7 +51,7 @@ function ContactFormContent({ intent }: { intent: string | null }) {
     setHref(null);
     setPrepared("");
     if (Object.keys(validation).length) {
-      setFeedback("Revise os campos indicados.");
+      setFeedback(form_.feedbackReview);
       requestAnimationFrame(() =>
         form.current
           ?.querySelector<HTMLElement>('[aria-invalid="true"]')
@@ -62,15 +64,11 @@ function ContactFormContent({ intent }: { intent: string | null }) {
     setPrepared(message);
     setHref(url);
     if (!url) {
-      setFeedback(
-        "Sua mensagem foi preparada, mas o WhatsApp da KRONVS ainda não está disponível. Nenhum dado foi enviado.",
-      );
+      setFeedback(form_.feedbackNoChannel);
       return;
     }
     window.open(url, "_blank", "noopener,noreferrer");
-    setFeedback(
-      "Mensagem preparada. Revise e confirme o envio no WhatsApp. Se a nova janela não abriu, use o link abaixo.",
-    );
+    setFeedback(form_.feedbackPrepared);
     track("click_whatsapp", { source: "contact-form" });
   }
   const input = (
@@ -115,25 +113,21 @@ function ContactFormContent({ intent }: { intent: string | null }) {
       aria-label="Solicitação de contato"
     >
       {!configured && (
-        <p className="availability">
-          O canal de WhatsApp está em configuração. Você pode preparar a
-          mensagem abaixo; nenhum envio será feito enquanto o canal não estiver
-          disponível.
-        </p>
+        <p className="availability">{form_.channelNotice}</p>
       )}
       <div className="form-grid">
-        {input("name", "Nome", "Seu nome", "text", "name", 100)}
+        {input("name", form_.nameLabel, form_.namePlaceholder, "text", "name", 100)}
         {input(
           "phone",
-          "WhatsApp com DDD",
-          "+55 (00) 00000-0000",
+          form_.phoneLabel,
+          form_.phonePlaceholder,
           "tel",
           "tel",
           30,
         )}
       </div>
       <div className="ds-field">
-          <label htmlFor="contact-need">Tipo de necessidade</label>
+          <label htmlFor="contact-need">{form_.needLabel}</label>
           <select
             id="contact-need"
             name="need"
@@ -145,7 +139,7 @@ function ContactFormContent({ intent }: { intent: string | null }) {
               setErrors((previous) => ({ ...previous, need: undefined }))
             }
           >
-            <option value="">Selecione uma opção</option>
+            <option value="">{form_.needPlaceholder}</option>
             {needs.map((need) => (
               <option key={need}>{need}</option>
             ))}
@@ -157,14 +151,14 @@ function ContactFormContent({ intent }: { intent: string | null }) {
           )}
       </div>
       <div className="ds-field">
-        <label htmlFor="contact-message">Como podemos ajudar?</label>
+        <label htmlFor="contact-message">{form_.messageLabel}</label>
         <textarea
           id="contact-message"
           name="message"
           rows={6}
           maxLength={2000}
           required
-          placeholder="Conte brevemente o que você precisa."
+          placeholder={form_.messagePlaceholder}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
           onChange={() =>
@@ -177,21 +171,19 @@ function ContactFormContent({ intent }: { intent: string | null }) {
           </span>
         )}
       </div>
-      <noscript>
-        Ative o JavaScript para preparar sua mensagem de contato.
-      </noscript>
+      <noscript>{form_.noscript}</noscript>
       <button
         className="ds-button submit-button"
         type="submit"
         disabled={!hydrated}
       >
-        Enviar solicitação
+        {form_.submitButton}
         <ArrowUpRight size={20} aria-hidden="true" />
       </button>
       <p className="contact-privacy">
-        <span>Ao continuar, os dados serão incluídos na mensagem aberta no WhatsApp. O envio à KRONVS só acontece quando você confirmar nesse serviço.</span>
+        <span>{form_.privacyText}</span>
         <Link href="/avisos-legais#privacidade">
-          Saiba como os dados são utilizados.
+          {form_.privacyLink}
         </Link>
       </p>
       <p role="status" className="form-feedback">
@@ -204,13 +196,13 @@ function ContactFormContent({ intent }: { intent: string | null }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Abrir WhatsApp para revisar e enviar
+          {form_.whatsappLink}
           <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       )}
       {prepared && (
         <details className="message-preview">
-          <summary>Revisar mensagem preparada</summary>
+          <summary>{form_.previewSummary}</summary>
           <pre>{prepared}</pre>
         </details>
       )}

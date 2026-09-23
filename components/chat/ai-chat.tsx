@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { globalContent } from "@/content";
 import { MessageCircle, X, ArrowUpRight } from "lucide-react";
+const chat = globalContent.chat;
+
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 export type ChatTransport = (
   messages: ChatMessage[],
@@ -48,9 +51,7 @@ export function AIChatButton({ transport }: { transport?: ChatTransport }) {
       setMessages([...next, { role: "assistant", content: answer }]);
     } catch {
       if (!request.current.signal.aborted)
-        setError(
-          "Não foi possível obter uma resposta. Tente novamente ou use a página de contato.",
-        );
+        setError(chat.errorMessage);
     } finally {
       setBusy(false);
     }
@@ -80,8 +81,8 @@ export function AIChatButton({ transport }: { transport?: ChatTransport }) {
         <div className="chat-panel">
           <div className="chat-heading">
             <div>
-              <span className="business-kicker">KRONVS</span>
-              <h2 id="chat-title">Assistente KRONVS</h2>
+              <span className="business-kicker">{chat.kicker}</span>
+              <h2 id="chat-title">{chat.title}</h2>
             </div>
             <button
               autoFocus
@@ -96,17 +97,9 @@ export function AIChatButton({ transport }: { transport?: ChatTransport }) {
           <div className="chat-conversation" role="log" aria-live="polite">
             {!transport && (
               <>
-                <p>
-                  A integração com IA ainda não está ativa. Enquanto isso,
-                  encontre a área que atende à sua necessidade ou fale com a
-                  KRONVS.
-                </p>
+                <p>{chat.inactiveNotice}</p>
                 <div className="chat-shortcuts">
-                  {[
-                    ["/engenharia", "Projetos e consultoria"],
-                    ["/sistemas", "Sistemas personalizados"],
-                    ["/contato", "Apresentar uma necessidade"],
-                  ].map(([href, label]) => (
+                  {chat.shortcuts.map(({ href, label }) => (
                     <Link key={href} href={href} onClick={() => setOpen(false)}>
                       {label}
                       <ArrowUpRight size={16} aria-hidden="true" />
@@ -118,14 +111,14 @@ export function AIChatButton({ transport }: { transport?: ChatTransport }) {
             {messages.map((message, i) => (
               <p className={`chat-message ${message.role}`} key={i}>
                 <strong>
-                  {message.role === "user" ? "Você" : "Assistente"}
+                  {message.role === "user" ? chat.userLabel : chat.assistantLabel}
                 </strong>
                 {message.content}
               </p>
             ))}
           </div>
           <form onSubmit={send}>
-            <label htmlFor="chat-input">Sua mensagem</label>
+            <label htmlFor="chat-input">{chat.inputLabel}</label>
             <textarea
               id="chat-input"
               name="message"
@@ -133,9 +126,7 @@ export function AIChatButton({ transport }: { transport?: ChatTransport }) {
               maxLength={2000}
               disabled={!transport || busy}
               placeholder={
-                transport
-                  ? "Como podemos ajudar?"
-                  : "Envio disponível após ativação do assistente."
+                transport ? chat.placeholderActive : chat.placeholderInactive
               }
             />
             <button
@@ -143,7 +134,7 @@ export function AIChatButton({ transport }: { transport?: ChatTransport }) {
               type="submit"
               disabled={!transport || busy}
             >
-              {busy ? "Aguardando resposta…" : "Enviar mensagem"}
+              {busy ? chat.waitingButton : chat.sendButton}
             </button>
             <p role="status">{error}</p>
           </form>

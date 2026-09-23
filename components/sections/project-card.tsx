@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
+import { projetosContent } from "@/content";
 import type { Project } from "@/data/projects";
 import { useSwipe } from "@/components/ui/use-swipe";
 export function ProjectCard({ project }: { project: Project }) {
@@ -59,11 +60,11 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <dl className="project-card-details">
           {[
-            ["Desafio", project.problem],
-            ["Escopo", project.scope],
-            ["Atuação", project.contribution],
+            [projetosContent.cardLabels.challenge, project.problem],
+            [projetosContent.cardLabels.scope, project.scope],
+            [projetosContent.cardLabels.contribution, project.contribution],
             ...(project.verifiedResult
-              ? [["Resultado", project.verifiedResult]]
+              ? [[projetosContent.cardLabels.result, project.verifiedResult]]
               : []),
           ].map(([label, text]) => (
             <div key={label}>
@@ -74,7 +75,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </dl>
         {project.href && (
           <Link className="text-link" href={project.href}>
-            Conhecer {project.title}
+            {projetosContent.cardLabels.learnMore} {project.title}
           </Link>
         )}
       </div>

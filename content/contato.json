@@ -1,0 +1,58 @@
+{
+  "seo": {
+    "title": "Contato | KRONVS",
+    "description": "Descreva sua necessidade em engenharia, consultoria ou sistema."
+  },
+  "hero": {
+    "eyebrow": "VAMOS ENTENDER A SUA NECESSIDADE",
+    "title": "Contato",
+    "lead": "Conte o cenário, o problema e o que precisa ser desenvolvido. Essas informações ajudam a iniciar uma conversa mais objetiva.",
+    "loadingForm": "Preparando formulário."
+  },
+  "form": {
+    "channelNotice": "O canal de WhatsApp está em configuração. Você pode preparar a mensagem abaixo; nenhum envio será feito enquanto o canal não estiver disponível.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome",
+    "phoneLabel": "WhatsApp com DDD",
+    "phonePlaceholder": "(00) 00000-0000",
+    "needLabel": "Tipo de necessidade",
+    "needPlaceholder": "Selecione uma opção",
+    "needs": [
+      "Engenharia",
+      "Consultoria",
+      "Projeto",
+      "ART",
+      "Planejamento / Gestão de Obras",
+      "Sistemas / Tecnologia",
+      "Automação de Processos",
+      "Outro"
+    ],
+    "defaultForEngineering": "Engenharia",
+    "defaultForSystems": "Sistemas / Tecnologia",
+    "defaultForBoth": "Outro",
+    "messageLabel": "Como podemos ajudar?",
+    "messagePlaceholder": "Conte brevemente o que você precisa.",
+    "submitButton": "Enviar solicitação",
+    "privacyText": "Ao continuar, os dados serão incluídos na mensagem aberta no WhatsApp. O envio à KRONVS só acontece quando você confirmar nesse serviço.",
+    "privacyLink": "Saiba como os dados são utilizados.",
+    "noscript": "Ative o JavaScript para preparar sua mensagem de contato.",
+    "errors": {
+      "name": "Informe seu nome, entre 2 e 100 caracteres.",
+      "phone": "Informe seu telefone com DDD.",
+      "need": "Selecione o tipo de necessidade.",
+      "message": "Descreva o cenário entre 10 e 2.000 caracteres."
+    },
+    "feedbackReview": "Revise os campos indicados.",
+    "feedbackNoChannel": "Sua mensagem foi preparada, mas o WhatsApp da KRONVS ainda não está disponível. Nenhum dado foi enviado.",
+    "feedbackPrepared": "Mensagem preparada. Revise e confirme o envio no WhatsApp. Se a nova janela não abriu, use o link abaixo.",
+    "whatsappLink": "Abrir WhatsApp para revisar e enviar",
+    "previewSummary": "Revisar mensagem preparada",
+    "whatsappMessage": {
+      "greeting": "Olá, entrei em contato pelo site da KRONVS.",
+      "nameLabel": "Nome",
+      "phoneLabel": "WhatsApp",
+      "needLabel": "Tipo de necessidade",
+      "messageLabel": "Mensagem"
+    }
+  }
+}

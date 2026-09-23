@@ -1,0 +1,76 @@
+{
+  "seo": {
+    "title": "KRONVS | Engenharia, Consultoria e Tecnologia",
+    "description": "Projetos de engenharia, planejamento e consultoria técnica. Sistemas web sob medida para gerenciar vendas, finanças e processos da sua empresa."
+  },
+  "nav": {
+    "skipLink": "Pular para o conteúdo",
+    "home": "Home",
+    "solutions": "Soluções",
+    "engineering": "Engenharia",
+    "systems": "Sistemas",
+    "about": "Sobre nós",
+    "contact": "Contato"
+  },
+  "footer": {
+    "line1": "Engenharia & Consultoria.",
+    "line2": "Sistemas & Tecnologia.",
+    "copyrightName": "KRONVS",
+    "legalNotice": "Avisos legais",
+    "privacyPolicy": "Política de privacidade"
+  },
+  "pageChrome": {
+    "heroRightLabel": "KRONVS / SOLUÇÕES SOB MEDIDA",
+    "heroFooterLabel": "KRONVS / 2026",
+    "ctaEyebrow": "PRÓXIMO PASSO / KRONVS"
+  },
+  "heroPanels": {
+    "engineering": {
+      "label": "ENGENHARIA",
+      "title": "Projetos e consultoria",
+      "description": "Do diagnóstico à aplicação em campo."
+    },
+    "systems": {
+      "label": "SISTEMAS",
+      "title": "Software Sob Medida",
+      "description": "Fluxos e informações que você realmente precisa"
+    },
+    "about": {
+      "label": "SOBRE A KRONVS",
+      "title": "Método, técnica e execução",
+      "description": "Engenharia, gestão e tecnologia para problemas reais."
+    },
+    "contact": {
+      "label": "CONTATO",
+      "title": "Vamos entender o seu projeto",
+      "description": "Conte o cenário para iniciarmos uma conversa objetiva."
+    }
+  },
+  "chat": {
+    "kicker": "KRONVS",
+    "title": "Assistente KRONVS",
+    "inactiveNotice": "A integração com IA ainda não está ativa. Enquanto isso, encontre a área que atende à sua necessidade ou fale com a KRONVS.",
+    "shortcuts": [
+      {
+        "href": "/engenharia",
+        "label": "Projetos e consultoria"
+      },
+      {
+        "href": "/sistemas",
+        "label": "Sistemas personalizados"
+      },
+      {
+        "href": "/contato",
+        "label": "Apresentar uma necessidade"
+      }
+    ],
+    "userLabel": "Você",
+    "assistantLabel": "Assistente",
+    "inputLabel": "Sua mensagem",
+    "placeholderActive": "Como podemos ajudar?",
+    "placeholderInactive": "Envio disponível após ativação do assistente.",
+    "sendButton": "Enviar mensagem",
+    "waitingButton": "Aguardando resposta…",
+    "errorMessage": "Não foi possível obter uma resposta. Tente novamente ou use a página de contato."
+  }
+}

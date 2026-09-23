@@ -5,48 +5,27 @@ import { EngineeringProcess } from "@/components/sections/engineering-process";
 import { Projects } from "@/components/sections/projects";
 import { CTASection } from "@/components/sections/cta-section";
 import { ContactLink } from "@/components/ui/contact-link";
-import { engineeringServices } from "@/data/offerings";
+import { engenhariaContent as c } from "@/content";
 import { pageMetadata } from "@/lib/metadata";
-export const metadata = pageMetadata(
-  "Engenharia & Consultoria | KRONVS",
-  "Projetos, HVAC, planejamento, gestão de obras, manutenção e consultoria técnica para instalações e operações.",
-  "/engenharia",
-);
+export const metadata = pageMetadata(c.seo.title, c.seo.description, "/engenharia");
 export default function EngineeringPage() {
   return (
     <PageShell>
       <PageHero
         signal="engineering"
-        eyebrow="KRONVS / ENGENHARIA"
-        title="Engenharia & Consultoria"
-        description="Soluções técnicas para projetos, instalações, obras e operações que exigem método, controle e responsabilidade."
+        eyebrow={c.hero.eyebrow}
+        title={c.hero.title}
+        description={c.hero.description}
       >
-        <ContactLink intent="engineering">Apresentar meu projeto</ContactLink>
+        <ContactLink intent="engineering">{c.hero.button}</ContactLink>
       </PageHero>
-      <ServiceGrid
-        title="Soluções em Engenharia"
-        items={engineeringServices}
-      />
+      <ServiceGrid title={c.services.title} items={c.services.cards} />
       <EngineeringProcess />
       <section className="section container applications-section">
-        <h2>Contextos de aplicação.</h2>
-        <p>
-          As soluções podem ser avaliadas para estes ambientes e necessidades. O
-          escopo depende das condições do projeto e dos requisitos técnicos
-          aplicáveis.
-        </p>
+        <h2>{c.applications.title}</h2>
+        <p>{c.applications.text}</p>
         <div className="tags">
-          {[
-            "Empresas e escritórios",
-            "Clínicas e hospitais",
-            "Indústrias",
-            "Operações comerciais",
-            "Manutenção",
-            "Obras",
-            "Retrofit",
-            "Expansão",
-            "Adequação de instalações",
-          ].map((item) => (
+          {c.applications.tags.map((item) => (
             <span className="ds-tag" key={item}>
               {item}
             </span>
@@ -55,9 +34,9 @@ export default function EngineeringPage() {
       </section>
       <Projects categories={["Engenharia", "Consultoria"]} showEmpty />
       <CTASection
-        title="Precisa estruturar uma solução técnica?"
-        text="Apresente o projeto, a instalação ou a decisão que precisa de apoio técnico."
-        button="Apresentar meu projeto"
+        title={c.cta.title}
+        text={c.cta.text}
+        button={c.cta.button}
         intent="engineering"
       />
     </PageShell>

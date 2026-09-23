@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowDownRight } from "lucide-react";
 import { ContactLink } from "@/components/ui/contact-link";
+import { homeContent } from "@/content";
 import styles from "./inversion-hero.module.css";
 
 // The circle inverts colors via mix-blend-mode (a single white shape
@@ -10,6 +11,8 @@ import styles from "./inversion-hero.module.css";
 // layer, so there's no second copy of the text that can drift out of
 // alignment with the real one.
 const BALL_SIZE = 380; // px — fixed diameter during phase 1 travel
+
+const hero = homeContent.hero;
 
 const clamp = (v: number) => Math.min(1, Math.max(0, v));
 
@@ -70,25 +73,22 @@ export function InversionHero() {
 
           <div className={styles.layer}>
             <span className="aura-mono aura-muted" data-motion-hero-meta>
-              KRONVS / ENGENHARIA · TECNOLOGIA
+              {hero.eyebrow}
             </span>
             <h1 className={styles.title} data-motion-hero-title>
-              Projetos de engenharia.
+              {hero.titleLine1}
               <br />
-              <span>Sistemas para sua empresa.</span>
+              <span>{hero.titleLine2Highlight}</span>
             </h1>
             <p className={styles.lead} data-motion-hero-lead>
-              Elaboramos projetos, planejamos obras e orientamos decisões
-              técnicas. Também desenvolvemos sistemas para controlar vendas,
-              finanças e processos, substituindo planilhas e tarefas manuais.
-              Você pode contratar uma área ou as duas.
+              {hero.lead}
             </p>
             <div className={styles.actions} data-motion-hero-actions>
               <a className="aura-button" href="#solucoes" data-smooth-scroll>
-                Conhecer soluções <ArrowDownRight size={18} aria-hidden="true" />
+                {hero.primaryButton} <ArrowDownRight size={18} aria-hidden="true" />
               </a>
               <ContactLink variant="text" location="home-hero">
-                Falar com a KRONVS
+                {hero.secondaryButton}
               </ContactLink>
             </div>
           </div>

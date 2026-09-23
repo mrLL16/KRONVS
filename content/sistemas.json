@@ -1,0 +1,199 @@
+{
+  "seo": {
+    "title": "Sistemas & Tecnologia | KRONVS",
+    "description": "Sistemas sob medida, automações, dashboards e integrações desenvolvidos a partir dos processos e necessidades reais."
+  },
+  "hero": {
+    "eyebrow": "KRONVS | TECNOLOGIA",
+    "title": "Sistemas & Tecnologia",
+    "description": "Software desenvolvido a partir da operação ou necessidade: seus processos, suas regras e as informações que precisam estar conectadas.",
+    "button": "Conversar sobre meu sistema"
+  },
+  "showcase": {
+    "eyebrow": "EXEMPLO DE SISTEMAS CRIADOS PARA O SEU NEGÓCIO",
+    "titleLine1": "Três produtos.",
+    "titleLine2": "Três formas de organizar a operação.",
+    "examples": {
+      "dashboard": {
+        "label": "Dashboard",
+        "title": "A operação inteira em uma única leitura.",
+        "description": "Indicadores, prioridades e informações organizadas para apoiar nas suas decisões."
+      },
+      "finance": {
+        "label": "Financeiro",
+        "title": "Seu financeiro, com contexto e previsibilidade.",
+        "description": "Fluxo de caixa, contas, próximos pagamento e documentos conectados para mostrar o realizado, o previsto e o que exige atenção."
+      },
+      "projects": {
+        "label": "Projetos",
+        "title": "Projetos avançam com responsáveis e prazos visíveis.",
+        "description": "Entregas, etapas, riscos e pendências reunidos em uma visão construída para acompanhar a execução."
+      }
+    }
+  },
+  "services": {
+    "title": "Soluções em Tecnologia",
+    "cards": [
+      {
+        "title": "Sistemas personalizados",
+        "description": "Software construído em torno das regras e necessidades internas da empresa.",
+        "items": [
+          "Gestão de projetos e obras",
+          "CRM e controle comercial",
+          "Financeiro e acompanhamento operacional",
+          "Gestão de clientes e documentos"
+        ]
+      },
+      {
+        "title": "Automação de processos",
+        "description": "Digitalização de tarefas que dependem de repetição, conferência manual ou controles fragmentados.",
+        "items": [
+          "Planilhas e formulários",
+          "Aprovações e fluxos de tarefas",
+          "Relatórios recorrentes",
+          "Conexão entre etapas do trabalho"
+        ]
+      },
+      {
+        "title": "Dashboards e indicadores",
+        "description": "Informações organizadas e apresentadas para acompanhar a operação e apoiar decisões.",
+        "items": [
+          "Indicadores financeiros e comerciais",
+          "Produtividade e cronogramas",
+          "KPIs e acompanhamento operacional",
+          "Visões por equipe ou responsabilidade"
+        ]
+      },
+      {
+        "title": "Portais e plataformas internas",
+        "description": "Um ambiente comum para registrar, consultar e acompanhar o trabalho.",
+        "items": [
+          "Dados e documentos",
+          "Tarefas e processos",
+          "Comunicação contextual",
+          "Histórico e rastreabilidade"
+        ]
+      },
+      {
+        "title": "Integrações",
+        "description": "Conexões definidas a partir dos sistemas existentes. \n*A disponibilidade de interfaces e as permissões necessárias, dependem de avaliação.",
+        "items": [
+          "APIs e bancos de dados",
+          "Serviços externos",
+          "Plataformas corporativas",
+          "Viabilidade e escopo avaliados por projeto"
+        ]
+      }
+    ]
+  },
+  "authorial": {
+    "eyebrow": "03 / PROJETOS EM PRODUÇÃO",
+    "title": "Sistemas em diferentes contextos.",
+    "text": "Três produtos desenvolvidos para necessidades distintas, com interfaces e funcionalidades próprias.",
+    "kickerPrefix": "PROJETO REAL",
+    "cases": [
+      {
+        "name": "Taylor Hub",
+        "type": "Operação para alfaiataria",
+        "objective": "Conectar atendimento, pedidos sob medida, operação e financeiro de uma alfaiataria de alto padrão em um único fluxo.",
+        "scope": "Clientes, medidas, pedidos, etapas de produção, estoque e financeiro.",
+        "focus": "Do atendimento à entrega, com informações organizadas por etapa."
+      },
+      {
+        "name": "JARVIZ",
+        "type": "Gestão financeira pessoal",
+        "objective": "Reunir a rotina financeira pessoal em uma visão que ajude a acompanhar compromissos e decisões.",
+        "scope": "Movimentações, categorias, cartões e faturas, dívidas e investimentos.",
+        "focus": "Registro e consulta de informações financeiras em fluxos conectados."
+      },
+      {
+        "name": "Project Flow",
+        "type": "Gestão de projetos",
+        "objective": "Dar visibilidade às frentes de projetos de engenharia, obras e investimentos.",
+        "scope": "Portfólio, cronograma, entregáveis, diário, arquivos, histórico e financeiro do projeto.",
+        "focus": "Prazos, registros e recursos consultados no contexto de cada projeto."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "02 / PROCESSO",
+    "title": "Da operação atual ao sistema em uso.",
+    "steps": [
+      {
+        "title": "Entender a operação",
+        "detailTitle": "Conhecer o trabalho real.",
+        "summary": "Mapear como o processo funciona hoje e quem participa dele.",
+        "explanation": "Conversamos com quem executa e acompanha as rotinas para compreender entradas, decisões, responsabilidades e informações usadas no dia a dia.",
+        "points": [
+          "Fluxos atuais",
+          "Pessoas e responsabilidades"
+        ]
+      },
+      {
+        "title": "Identificar o problema",
+        "detailTitle": "Localizar o que atrasa a operação.",
+        "summary": "Encontrar gargalos, retrabalho e informações dispersas.",
+        "explanation": "Separamos os sintomas das causas: onde a equipe repete tarefas, perde contexto ou depende de planilhas e registros desconectados.",
+        "points": [
+          "Gargalos e retrabalho",
+          "Dados dispersos"
+        ]
+      },
+      {
+        "title": "Arquitetar a solução",
+        "detailTitle": "Definir a estrutura do sistema.",
+        "summary": "Organizar fluxos, módulos, usuários e integrações necessárias.",
+        "explanation": "Traduzimos a operação em jornadas, regras e módulos. Avaliamos permissões e possíveis integrações antes de definir o escopo de desenvolvimento.",
+        "points": [
+          "Fluxos e regras",
+          "Módulos e acessos"
+        ]
+      },
+      {
+        "title": "Prototipar",
+        "detailTitle": "Validar antes de construir.",
+        "summary": "Testar a interface e a lógica com os envolvidos.",
+        "explanation": "Apresentamos os caminhos principais em um protótipo para conferir linguagem, sequência das tarefas e informações necessárias antes de ampliar a implementação.",
+        "points": [
+          "Interface e navegação",
+          "Validação dos fluxos"
+        ]
+      },
+      {
+        "title": "Desenvolver",
+        "detailTitle": "Construir por entregas.",
+        "summary": "Implementar a solução em etapas e revisar cada entrega.",
+        "explanation": "Desenvolvemos os módulos conforme o escopo acordado, verificando as regras do processo e tornando cada entrega disponível para revisão.",
+        "points": [
+          "Implementação incremental",
+          "Revisão das entregas"
+        ]
+      },
+      {
+        "title": "Validar",
+        "detailTitle": "Conferir com quem vai usar.",
+        "summary": "Testar o sistema com usuários e ajustar os fluxos.",
+        "explanation": "Os cenários de uso são testados com os envolvidos para identificar falhas, esclarecer comportamentos e ajustar o sistema antes da adoção operacional.",
+        "points": [
+          "Cenários reais",
+          "Ajustes de uso"
+        ]
+      },
+      {
+        "title": "Evoluir",
+        "detailTitle": "Melhorar a partir do uso.",
+        "summary": "Priorizar melhorias depois que o sistema entra na rotina.",
+        "explanation": "O uso revela novas necessidades e oportunidades. Avaliamos o retorno da equipe e organizamos as próximas melhorias conforme as prioridades e o escopo acordado.",
+        "points": [
+          "Retorno dos usuários",
+          "Próximas prioridades"
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "title": "Qual processo precisa funcionar melhor?",
+    "text": "Conte o que sua equipe faz hoje, onde estão as dificuldades e o que espera de um sistema próprio.",
+    "button": "Apresentar minha necessidade"
+  }
+}

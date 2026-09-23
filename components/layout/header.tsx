@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { globalContent } from "@/content";
 import { Brand } from "./brand";
 import { SolutionsDropdown } from "@/components/navigation/solutions-dropdown";
 import { AIChatButton } from "@/components/chat/ai-chat";
@@ -73,7 +74,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
             aria-current={pathname === "/" ? "page" : undefined}
             onClick={() => setOpen(false)}
           >
-            Home
+            {globalContent.nav.home}
           </Link>
           <SolutionsDropdown
             pathname={pathname}
@@ -85,7 +86,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
             aria-current={pathname === "/sobre" ? "page" : undefined}
             onClick={() => setOpen(false)}
           >
-            Sobre nós
+            {globalContent.nav.about}
           </Link>
           <Link
             className="nav-link"
@@ -93,7 +94,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
             aria-current={pathname === "/contato" ? "page" : undefined}
             onClick={() => setOpen(false)}
           >
-            Contato
+            {globalContent.nav.contact}
           </Link>
         </nav>
         <div className="header-actions">

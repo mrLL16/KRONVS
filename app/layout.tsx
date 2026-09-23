@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { company, description } from "@/data/company";
+import { company } from "@/data/company";
+import { globalContent } from "@/content";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
@@ -8,18 +9,18 @@ import { SiteMotion } from "@/components/ui/site-motion";
 const siteUrl = company.siteUrl ? new URL(company.siteUrl) : undefined;
 export const metadata: Metadata = {
   icons: { icon: "data:," },
-  title: "KRONVS | Engenharia, Consultoria e Tecnologia",
-  description,
+  title: globalContent.seo.title,
+  description: globalContent.seo.description,
   ...(siteUrl ? { metadataBase: siteUrl, alternates: { canonical: "/" } } : {}),
   openGraph: {
     title: company.fullName,
-    description,
+    description: globalContent.seo.description,
     locale: "pt_BR",
     type: "website",
     siteName: "KRONVS",
     ...(siteUrl ? { url: siteUrl } : {}),
   },
-  twitter: { card: "summary", title: company.fullName, description },
+  twitter: { card: "summary", title: company.fullName, description: globalContent.seo.description },
   robots: { index: Boolean(siteUrl), follow: Boolean(siteUrl) },
 };
 export default function RootLayout({
@@ -45,7 +46,7 @@ export default function RootLayout({
       </head>
       <body id="top">
         <a className="skip-link" href="#main">
-          Pular para o conteúdo
+          {globalContent.nav.skipLink}
         </a>
         <Header />
         {children}

@@ -2,32 +2,12 @@
 
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { sistemasContent } from "@/content";
 import styles from "./authorial-systems.module.css";
 import { useSwipe } from "@/components/ui/use-swipe";
 
-const cases = [
-  {
-    name: "Taylor Hub",
-    type: "Operação sob medida",
-    objective: "Conectar atendimento, pedidos sob medida e operação de uma alfaiataria em um único fluxo.",
-    scope: "Clientes, medidas, pedidos, etapas de produção, estoque e financeiro.",
-    focus: "Do atendimento à entrega, com informações organizadas por etapa.",
-  },
-  {
-    name: "JARVIZ",
-    type: "Gestão financeira pessoal",
-    objective: "Reunir a rotina financeira pessoal em uma visão que ajude a acompanhar compromissos e decisões.",
-    scope: "Movimentações, categorias, cartões e faturas, dívidas e investimentos.",
-    focus: "Registro e consulta de informações financeiras em fluxos conectados.",
-  },
-  {
-    name: "Project Flow",
-    type: "Gestão de projetos",
-    objective: "Dar visibilidade às frentes de projetos de engenharia, obras e investimentos.",
-    scope: "Portfólio, cronograma, entregáveis, diário, arquivos, histórico e financeiro do projeto.",
-    focus: "Prazos, registros e recursos consultados no contexto de cada projeto.",
-  },
-] as const;
+const content = sistemasContent.authorial;
+const cases = content.cases;
 
 export function TaylorPreview() {
   return <div className={`${styles.appPreview} ${styles.taylor}`}>
@@ -56,10 +36,10 @@ export function AuthorialSystems() {
     <section className={`section container ${styles.section}`} aria-labelledby="authorial-systems-title">
       <div className={styles.heading}>
         <div>
-          <span className="aura-mono aura-muted">03 / PROJETOS AUTORAIS</span>
-          <h2 id="authorial-systems-title">Sistemas em diferentes contextos.</h2>
+          <span className="aura-mono aura-muted">{content.eyebrow}</span>
+          <h2 id="authorial-systems-title">{content.title}</h2>
         </div>
-        <p>Três produtos desenvolvidos para rotinas distintas, com interfaces e funcionalidades próprias.</p>
+        <p>{content.text}</p>
       </div>
 
       <div className={styles.controls} role="group" aria-label="Selecionar sistema">
@@ -80,7 +60,7 @@ export function AuthorialSystems() {
       <div className={styles.card} key={item.name} aria-live="polite" {...swipe}>
         <div className={styles.preview} aria-label={`Prévia de ${item.name}`}>{previews[active]}</div>
         <div className={styles.details}>
-          <span className="aura-mono aura-muted">PROJETO AUTORAL / {item.type.toUpperCase()}</span>
+          <span className="aura-mono aura-muted">{content.kickerPrefix} / {item.type.toUpperCase()}</span>
           <h3>{item.name}</h3>
           <dl>
             <div><dt>Objetivo</dt><dd>{item.objective}</dd></div>

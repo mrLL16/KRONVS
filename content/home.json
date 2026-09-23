@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "KRONVS | Engenharia, Consultoria e Tecnologia",
+    "description": "Projetos, consultoria técnica e sistemas personalizados para estruturar soluções, melhorar processos e apoiar decisões."
+  },
+  "hero": {
+    "eyebrow": "KRONVS | ENGENHARIA · TECNOLOGIA",
+    "titleLine1": "Engenharia que soluciona.",
+    "titleLine2Highlight": "Sistemas que facilitam.",
+    "lead": "Engenharia e consultoria para solucionar a sua necessidade. Sistemas que facilitam o seu dia a dia.\nQual a sua necessidade hoje?",
+    "primaryButton": "Conhecer soluções",
+    "secondaryButton": "Falar com a KRONVS"
+  },
+  "solutions": {
+    "eyebrow": "01 / SOLUÇÕES",
+    "titleLine1": "Duas frentes de atuação.",
+    "titleLine2Highlight": "Excelência em ambas.",
+    "cards": [
+      {
+        "title": "Engenharia & Consultoria",
+        "text": "Projetos de engenharia, ART, planejamento, gestão e acompanhamento técnico. Da análise de uma instalação à organização de obras e processos.",
+        "linkLabel": "Conhecer Engenharia",
+        "linkHref": "/engenharia"
+      },
+      {
+        "title": "Sistemas & Tecnologia",
+        "text": "Sistemas personalizados, automações, dashboards e ferramentas de gestão para facilitar as suas rotinas e organizar os seus processos.",
+        "linkLabel": "Conhecer Sistemas",
+        "linkHref": "/sistemas"
+      }
+    ]
+  },
+  "method": {
+    "eyebrow": "02 / MÉTODO",
+    "titleLine1": "A solução começa",
+    "titleLine2Highlight": "antes da ferramenta.",
+    "text": "Entender o contexto, estruturar a decisão e apoiar a aplicação no trabalho real.",
+    "steps": [
+      {
+        "title": "Entender",
+        "detailTitle": "Entender o problema real.",
+        "summary": "Conhecer o contexto e o problema real.",
+        "explanation": "Antes de qualquer informação, identificamos como o trabalho acontece hoje, quem participa e onde está a real dificuldade. Essa leitura evita tratar apenas o sintoma e atua diretamente no problema.",
+        "points": [
+          "Contexto e objetivo",
+          "Restrições e envolvidos"
+        ]
+      },
+      {
+        "title": "Estruturar",
+        "detailTitle": "Estruturar o caminho.",
+        "summary": "Definir escopo, critérios e prioridades.",
+        "explanation": "Organizamos as informações em um caminho de execução claro e objetivo. Delimitamos o que precisa ser resolvido, as decisões necessárias e a ordem mais coerente para avançar.",
+        "points": [
+          "Escopo e premissas",
+          "Prioridades e critérios"
+        ]
+      },
+      {
+        "title": "Desenvolver",
+        "detailTitle": "Desenvolver com critérios claros.",
+        "summary": "Construir o projeto ou a solução digital.",
+        "explanation": "Com o problema identificado, desenvolvemos o trabalho adequado ao escopo: engenharia, consultoria ou sistema. Cada entrega responde a requisitos reais da operação.",
+        "points": [
+          "Desenvolvimento por etapas",
+          "Validação das decisões"
+        ]
+      },
+      {
+        "title": "Implementar",
+        "detailTitle": "Implementar no contexto real.",
+        "summary": "Apoiar a aplicação no trabalho real.",
+        "explanation": "Acompanhamos a aplicação da solução (quando isso fizer parte do escopo), ajustando o que for necessário para que o projeto ou sistema funcione nas condições reais.",
+        "points": [
+          "Aplicação acompanhada",
+          "Ajustes de uso"
+        ]
+      },
+      {
+        "title": "Evoluir",
+        "detailTitle": "Evoluir a partir do uso.",
+        "summary": "Avaliar resultados e planejar ajustes.",
+        "explanation": "Depois da implantação, avaliamos o que mudou, registramos pontos de atenção e identificamos melhorias possíveis. A evolução parte de evidências do uso, não de funcionalidades adicionadas por hábito.",
+        "points": [
+          "Leitura dos resultados",
+          "Próximas melhorias"
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "03 / PRÓXIMO PASSO",
+    "titleLine1": "Tem um problema que",
+    "titleLine2Highlight": "precisa ser estruturado?",
+    "text": "Conte o cenário. A KRONVS ajuda a transformar a necessidade em uma solução executável.",
+    "button": "Falar sobre"
+  }
+}

@@ -1,3 +1,4 @@
+import { globalContent } from "@/content";
 import { ContactLink } from "@/components/ui/contact-link";
 import type { ContactIntent } from "@/data/company";
 export function CTASection({
@@ -14,7 +15,7 @@ export function CTASection({
   return (
     <section className="section container compact-cta aura-final-cta aura-mesh">
       <div>
-        <span className="aura-mono aura-muted">PRÓXIMO PASSO / KRONVS</span>
+        <span className="aura-mono aura-muted">{globalContent.pageChrome.ctaEyebrow}</span>
         <h2>{title}</h2>
         <p>{text}</p>
       </div>

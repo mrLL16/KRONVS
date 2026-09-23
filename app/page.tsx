@@ -6,13 +6,10 @@ import { HomeMethod } from "@/components/sections/home-method";
 import { InversionHero } from "@/components/sections/inversion-hero";
 import { pageMetadata } from "@/lib/metadata";
 import { company } from "@/data/company";
+import { homeContent as c } from "@/content";
 import styles from "./home.module.css";
 
-export const metadata = pageMetadata(
-  "KRONVS | Engenharia, Consultoria e Tecnologia",
-  "Projetos, consultoria técnica e sistemas personalizados para estruturar soluções, melhorar processos e apoiar decisões.",
-  "/",
-);
+export const metadata = pageMetadata(c.seo.title, c.seo.description, "/");
 export default function Home() {
   return (
     <PageShell>
@@ -38,71 +35,52 @@ export default function Home() {
         >
           <div className={styles.sectionHeading}>
             <div>
-              <span className="aura-mono aura-muted">01 / SOLUÇÕES</span>
+              <span className="aura-mono aura-muted">{c.solutions.eyebrow}</span>
               <h2>
-                Duas frentes de atuação.
+                {c.solutions.titleLine1}
                 <br />
-                <span>Contratadas juntas ou separadas.</span>
+                <span>{c.solutions.titleLine2Highlight}</span>
               </h2>
             </div>
           </div>
           <div className={styles.services}>
-            <article className="aura-card">
-              <h3>Engenharia &amp; Consultoria</h3>
-              <p>
-                Projetos de engenharia e HVAC, planejamento, gestão e
-                acompanhamento técnico. Da análise de uma instalação à
-                organização de obras e processos.
-              </p>
-              <Link className={styles.serviceLink} href="/engenharia">
-                Conhecer Engenharia{" "}
-                <ArrowUpRight size={18} aria-hidden="true" />
-              </Link>
-            </article>
-            <article className="aura-card">
-              <h3>Sistemas &amp; Tecnologia</h3>
-              <p>
-                Sistemas personalizados, automações, dashboards e ferramentas de
-                gestão para digitalizar rotinas e reunir informações que hoje
-                estão dispersas.
-              </p>
-              <Link className={styles.serviceLink} href="/sistemas">
-                Conhecer Sistemas <ArrowUpRight size={18} aria-hidden="true" />
-              </Link>
-            </article>
+            {c.solutions.cards.map((card) => (
+              <article className="aura-card" key={card.linkHref}>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+                <Link className={styles.serviceLink} href={card.linkHref}>
+                  {card.linkLabel}{" "}
+                  <ArrowUpRight size={18} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
           </div>
         </section>
         <section className={`${styles.section} ${styles.process}`}>
           <div className={styles.sectionHeading}>
             <div>
-              <span className="aura-mono aura-muted">02 / MÉTODO</span>
+              <span className="aura-mono aura-muted">{c.method.eyebrow}</span>
               <h2>
-                A solução começa
+                {c.method.titleLine1}
                 <br />
-                <span>antes da ferramenta.</span>
+                <span>{c.method.titleLine2Highlight}</span>
               </h2>
             </div>
-            <p>
-              Conhecer o contexto, estruturar a decisão e apoiar a aplicação no
-              trabalho real.
-            </p>
+            <p>{c.method.text}</p>
           </div>
           <HomeMethod />
         </section>
         <section className={`${styles.contact} aura-mesh`}>
-          <span className="aura-mono aura-muted">03 / PRÓXIMO PASSO</span>
+          <span className="aura-mono aura-muted">{c.cta.eyebrow}</span>
           <h2>
-            Tem um problema que
+            {c.cta.titleLine1}
             <br />
-            <span>precisa ser estruturado?</span>
+            <span>{c.cta.titleLine2Highlight}</span>
           </h2>
           <div className={styles.contactRow}>
-            <p>
-              Conte o cenário. A KRONVS ajuda a transformar a necessidade em uma
-              solução executável.
-            </p>
+            <p>{c.cta.text}</p>
             <ContactLink variant="primary" location="home-cta">
-              Falar sobre meu projeto
+              {c.cta.button}
             </ContactLink>
           </div>
         </section>

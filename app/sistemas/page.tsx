@@ -6,35 +6,28 @@ import { SystemShowcase } from "@/components/sections/system-showcase";
 import { AuthorialSystems } from "@/components/sections/authorial-systems";
 import { CTASection } from "@/components/sections/cta-section";
 import { ContactLink } from "@/components/ui/contact-link";
-import { systemServices } from "@/data/offerings";
+import { sistemasContent as c } from "@/content";
 import { pageMetadata } from "@/lib/metadata";
-export const metadata = pageMetadata(
-  "Sistemas & Tecnologia | KRONVS",
-  "Sistemas sob medida, automações, dashboards, portais e integrações desenvolvidos a partir dos processos reais da empresa.",
-  "/sistemas",
-);
+export const metadata = pageMetadata(c.seo.title, c.seo.description, "/sistemas");
 export default function SystemsPage() {
   return (
     <PageShell>
       <PageHero
         signal="systems"
-        eyebrow="KRONVS / TECNOLOGIA"
-        title="Sistemas & Tecnologia"
-        description="Software desenvolvido a partir da operação real da empresa: seus processos, suas regras e as informações que precisam estar conectadas."
+        eyebrow={c.hero.eyebrow}
+        title={c.hero.title}
+        description={c.hero.description}
       >
-        <ContactLink intent="systems">Conversar sobre meu sistema</ContactLink>
+        <ContactLink intent="systems">{c.hero.button}</ContactLink>
       </PageHero>
       <SystemShowcase />
-      <ServiceGrid
-        title="Soluções em Tecnologia"
-        items={systemServices}
-      />
+      <ServiceGrid title={c.services.title} items={c.services.cards} />
       <AuthorialSystems />
       <SystemsProcess />
       <CTASection
-        title="Qual processo precisa funcionar melhor?"
-        text="Conte o que sua equipe faz hoje, onde estão as dificuldades e o que espera de um sistema próprio."
-        button="Apresentar minha necessidade"
+        title={c.cta.title}
+        text={c.cta.text}
+        button={c.cta.button}
         intent="systems"
       />
     </PageShell>

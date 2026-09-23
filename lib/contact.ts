@@ -1,12 +1,7 @@
-export const needs = [
-  "Engenharia",
-  "Consultoria",
-  "HVAC / Climatização",
-  "Planejamento / Gestão de Obras",
-  "Sistemas / Tecnologia",
-  "Automação de Processos",
-  "Outro",
-] as const;
+import { contatoContent } from "@/content";
+
+const form = contatoContent.form;
+export const needs: readonly string[] = form.needs;
 export type ContactData = {
   name: string;
   phone: string;
@@ -17,7 +12,7 @@ export type ContactErrors = Partial<Record<keyof ContactData, string>>;
 export function validateContact(data: ContactData): ContactErrors {
   const errors: ContactErrors = {};
   if (data.name.trim().length < 2 || data.name.length > 100)
-    errors.name = "Informe seu nome, entre 2 e 100 caracteres.";
+    errors.name = form.errors.name;
   const digits = data.phone.replace(/\D/g, "");
   if (
     !/^[+\d\s().-]+$/.test(data.phone) ||
@@ -25,15 +20,15 @@ export function validateContact(data: ContactData): ContactErrors {
     digits.length > 15 ||
     data.phone.length > 30
   )
-    errors.phone = "Informe seu telefone com DDD.";
-  if (!(needs as readonly string[]).includes(data.need))
-    errors.need = "Selecione o tipo de necessidade.";
+    errors.phone = form.errors.phone;
+  if (!needs.includes(data.need)) errors.need = form.errors.need;
   if (data.message.trim().length < 10 || data.message.length > 2000)
-    errors.message = "Descreva o cenário entre 10 e 2.000 caracteres.";
+    errors.message = form.errors.message;
   return errors;
 }
 export function buildContactMessage(data: ContactData) {
-  return `Olá, entrei em contato pelo site da KRONVS.\n\nNome: ${data.name.trim()}\nWhatsApp: ${data.phone.trim()}\nTipo de necessidade: ${data.need}\n\nMensagem:\n${data.message.trim()}`;
+  const m = form.whatsappMessage;
+  return `${m.greeting}\n\n${m.nameLabel}: ${data.name.trim()}\n${m.phoneLabel}: ${data.phone.trim()}\n${m.needLabel}: ${data.need}\n\n${m.messageLabel}:\n${data.message.trim()}`;
 }
 export function buildWhatsAppUrl(number: string, message: string) {
   const digits = number.replace(/\D/g, "");

@@ -13,27 +13,10 @@ import {
   Users,
   WalletCards,
 } from "lucide-react";
+import { sistemasContent } from "@/content";
 
-const examples = {
-  dashboard: {
-    label: "Dashboard",
-    title: "A operação inteira em uma única leitura.",
-    description:
-      "Indicadores, prioridades e tendências organizados para apoiar decisões sem depender de planilhas dispersas.",
-  },
-  finance: {
-    label: "Financeiro",
-    title: "Seu financeiro, com contexto e previsibilidade.",
-    description:
-      "Fluxo de caixa, contas e documentos conectados para mostrar o realizado, o previsto e o que exige atenção.",
-  },
-  projects: {
-    label: "Projetos",
-    title: "Projetos avançam com responsáveis e prazos visíveis.",
-    description:
-      "Entregas, etapas, riscos e pendências reunidos em uma visão construída para acompanhar a execução.",
-  },
-} as const;
+const showcase = sistemasContent.showcase;
+const examples = showcase.examples;
 
 type ExampleKey = keyof typeof examples;
 
@@ -197,8 +180,8 @@ export function SystemShowcase() {
   return (
     <section className="showcase-section container" aria-labelledby="showcase-title">
       <div className="showcase-intro" data-reveal>
-        <span className="business-kicker">SISTEMAS CRIADOS PARA O SEU NEGÓCIO</span>
-        <h2 id="showcase-title">Três produtos.<span className="muted">Três formas de organizar a operação.</span></h2>
+        <span className="business-kicker">{showcase.eyebrow}</span>
+        <h2 id="showcase-title">{showcase.titleLine1}<span className="muted">{showcase.titleLine2}</span></h2>
       </div>
       <div className="showcase-experience">
         <div className="showcase-sticky">

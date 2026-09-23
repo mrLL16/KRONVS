@@ -1,3 +1,4 @@
+import { globalContent } from "@/content";
 import { HeroSignal, type HeroSignalKind } from "@/components/sections/hero-signal";
 
 export function PageHero({
@@ -18,7 +19,7 @@ export function PageHero({
       <div className="aura-hero-meta" data-motion-hero-meta>
         <span className="aura-mono aura-muted">{eyebrow}</span>
         <span className="aura-mono aura-muted">
-          KRONVS / SOLUÇÕES SOB MEDIDA
+          {globalContent.pageChrome.heroRightLabel}
         </span>
       </div>
       <div className="aura-hero-layout">
@@ -40,7 +41,7 @@ export function PageHero({
         </div>}
       </div>
       <div className="aura-hero-footer">
-        <span className="aura-mono">KRONVS / 2026</span>
+        <span className="aura-mono">{globalContent.pageChrome.heroFooterLabel}</span>
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import {
   useSyncExternalStore,
 } from "react";
 import gsap from "gsap";
+import { sobreContent } from "@/content";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
@@ -89,65 +90,13 @@ function usePrefersReducedMotion() {
   );
 }
 
-// Alternating top/bottom milestones, already in chronological order.
-const topJourneyData: JourneyItem[] = [
-  {
-    id: "2022-jul",
-    date: "JULHO 2022",
-    title: "Início das operações",
-    description:
-      "Início das atividades em engenharia, gerenciamento de obras, planejamento, manutenção, projetos, processos e consultorias técnicas.",
-  },
-  {
-    id: "2024-jun",
-    date: "JUNHO 2024",
-    title: "Expansão da atuação",
-    description:
-      "Ampliação da atuação em projetos para empresas de diferentes segmentos, envolvendo gerenciamento de obras, consultorias, retrofit, modernização de equipamentos e melhoria de processos.",
-  },
-  {
-    id: "2026-mai",
-    date: "MAIO 2026",
-    title: "Tecnologia aplicada aos negócios",
-    description:
-      "Desenvolvimento de soluções digitais e sistemas personalizados, incorporando tecnologia à experiência acumulada em engenharia, gestão e processos.",
-  },
-];
-
-const bottomJourneyData: JourneyItem[] = [
-  {
-    id: "2023-fev",
-    date: "FEVEREIRO 2023",
-    title: "Projeto de grande porte",
-    description:
-      "Participação em projeto de grande porte, ampliando a experiência em planejamento, acompanhamento técnico, coordenação de atividades e gestão da execução.",
-  },
-  {
-    id: "2025-ago",
-    date: "AGOSTO 2025",
-    title: "Integração entre engenharia e processos",
-    description:
-      "Evolução dos serviços com maior integração entre engenharia, processos, planejamento e análise operacional, buscando soluções mais eficientes e aderentes à realidade de cada cliente.",
-  },
-  {
-    id: "2026-set",
-    date: "SETEMBRO 2026",
-    title: "Uma nova fase",
-    brand: "KRONVS Engenharia & Consultoria",
-    description:
-      "A trajetória iniciada em 2022 evolui para uma nova marca, com escopo ampliado, processos mais estruturados e atuação integrada entre engenharia, consultoria, processos e tecnologia.",
-  },
-];
-
-// Interleaved chronological order: top, bottom, top, bottom, top, bottom.
-const allJourneyItems: JourneyItem[] = [
-  topJourneyData[0],
-  bottomJourneyData[0],
-  topJourneyData[1],
-  bottomJourneyData[1],
-  topJourneyData[2],
-  bottomJourneyData[2],
-];
+// Marcos vêm de content/sobre.json em ordem cronológica: posições pares
+// ficam na fileira de cima e ímpares na de baixo.
+const allJourneyItems: JourneyItem[] = sobreContent.timeline.milestones.map(
+  (milestone, index) => ({ ...milestone, id: `m${index}` }),
+);
+const topJourneyData = allJourneyItems.filter((_, index) => index % 2 === 0);
+const bottomJourneyData = allJourneyItems.filter((_, index) => index % 2 === 1);
 
 export function JourneyTimeline() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -458,7 +407,7 @@ export function JourneyTimeline() {
             <div className="flex h-1/2 w-full items-center justify-start gap-[.5vw]">
               <div className="h-full w-[clamp(240px,22vw,340px)] shrink-0 pt-[2vw] max-[600px]:h-fit max-[600px]:w-[36vw] max-[600px]:pt-[5vw]">
                 <h2 className="w-full break-normal text-[2.5vw] leading-[1.05] max-[600px]:text-[8.5vw]" style={{ color: textColor }}>
-                  Nossa trajetória
+                  {sobreContent.timeline.title}
                 </h2>
               </div>
 
@@ -489,7 +438,7 @@ export function JourneyTimeline() {
             <div className="h-1/2 flex items-center justify-start w-full">
               <div className="w-[clamp(220px,20vw,320px)] shrink-0 pt-[2vw] max-[600px]:pt-[5vw] max-[600px]:w-[36vw] h-full">
                 <p className="text-[1.1vw] leading-none max-[600px]:text-[4.2vw]" style={mutedTextStyle}>
-                  2022 — 2026
+                  {sobreContent.timeline.rangeLabel}
                 </p>
               </div>
 

@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { sobreContent } from "@/content";
 import { ContactLink } from "@/components/ui/contact-link";
 export function AuthorSignature() {
   return (
@@ -16,16 +17,16 @@ export function AuthorSignature() {
           <ArrowUpRight strokeWidth={0.75} />
         </div>
         <h2 id="author-title">
-          Esta página foi desenvolvida
+          {sobreContent.author.titleLine1}
           <br />
-          <span className="muted">100% pela KRONVS.</span>
+          <span className="muted">{sobreContent.author.titleLine2Highlight}</span>
         </h2>
         <p>
-          O site reúne alguns exemplos da nossa forma de trabalhar.
-          <br />Cada projeto começa pela compreensão do seu contexto.
+          {sobreContent.author.textLine1}
+          <br />{sobreContent.author.textLine2}
         </p>
         <ContactLink intent="systems" location="author">
-          Quero conversar sobre minha ideia
+          {sobreContent.author.button}
         </ContactLink>
       </div>
     </section>

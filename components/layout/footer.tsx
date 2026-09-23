@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
+import { globalContent } from "@/content";
 import { Brand } from "./brand";
 export function Footer() {
   return (
@@ -9,18 +10,18 @@ export function Footer() {
           <Brand />
         </div>
         <p className="mono">
-          Engenharia & Consultoria.
+          {globalContent.footer.line1}
           <br />
-          Sistemas & Tecnologia.
+          {globalContent.footer.line2}
         </p>
         <a className="back-top" href="#top" aria-label="Voltar ao início">
           <ArrowUp size={20} aria-hidden="true" />
         </a>
       </div>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} KRONVS</span>
-        <Link href="/avisos-legais">Avisos legais</Link>
-        <Link href="/avisos-legais#privacidade">Política de privacidade</Link>
+        <span>© {new Date().getFullYear()} {globalContent.footer.copyrightName}</span>
+        <Link href="/avisos-legais">{globalContent.footer.legalNotice}</Link>
+        <Link href="/avisos-legais#privacidade">{globalContent.footer.privacyPolicy}</Link>
       </div>
     </footer>
   );

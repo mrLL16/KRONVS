@@ -1,36 +1,17 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { globalContent } from "@/content";
 import { Cog, DraftingCompass, Layers3, MessageSquareText } from "lucide-react";
 
 export type HeroSignalKind = "engineering" | "systems" | "about" | "contact";
 
 const content = {
-  engineering: {
-    label: "ENGENHARIA",
-    actionLabel: "Conhecer engenharia",
-    title: "Projetos e consultoria",
-    description: "Do diagnóstico à aplicação em campo.",
-  },
-  systems: {
-    label: "SISTEMAS",
-    actionLabel: "Conhecer sistemas",
-    title: "Software Sob Medida",
-    description: "Fluxos e informações que você realmente precisa",
-  },
-  about: {
-    label: "SOBRE A KRONVS",
-    actionLabel: "Conhecer a KRONVS",
-    title: "Método, técnica e execução",
-    description: "Engenharia, gestão e tecnologia para problemas reais.",
-  },
-  contact: {
-    label: "CONTATO",
-    actionLabel: "Conhecer o contato da KRONVS",
-    title: "Vamos entender o seu projeto",
-    description: "Conte o cenário para iniciarmos uma conversa objetiva.",
-  },
-} as const;
+  engineering: { ...globalContent.heroPanels.engineering, actionLabel: "Conhecer engenharia" },
+  systems: { ...globalContent.heroPanels.systems, actionLabel: "Conhecer sistemas" },
+  about: { ...globalContent.heroPanels.about, actionLabel: "Conhecer a KRONVS" },
+  contact: { ...globalContent.heroPanels.contact, actionLabel: "Conhecer o contato da KRONVS" },
+};
 
 function SignalIcon({
   signal,
