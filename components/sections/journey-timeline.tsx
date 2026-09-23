@@ -352,21 +352,35 @@ export function JourneyTimeline() {
         },
       });
 
+      // Title/description are the longest-running tweens in this timeline
+      // (full `duration`, driving the per-line stagger reveal), so they're
+      // added first to anchor the timeline's zero point. The dot/line/date
+      // are then aligned to that same start ("<") instead of being
+      // sequenced first with a negative `delay` to pull the text back over
+      // them: a negative delay on the first children of a root timeline
+      // gets its zero point shifted forward by GSAP to avoid negative
+      // start times, which silently stranded the dot/line in a short
+      // window in the *middle* of the timeline. On scrub, that meant
+      // reverse-scrolling made the dot finish hiding well before the text
+      // did (dot's window ended while text was still only ~40% hidden) -
+      // exactly the "circle disappears before the text" bug reported.
+      // Anchoring both to the same start keeps them reaching fully-hidden
+      // together on reverse scroll.
       timeline
-        .to(lineSelector, { scaleY: 1, duration: duration * 0.4 })
-        .to(dotSelector, { scale: 1, duration: duration * 0.4 }, "<")
-        .to(`.date-${item.id}`, { opacity: 1, y: 0, duration: duration * 0.4 }, "<")
         .fromTo(
           titleLines,
           { y: 100 },
-          { y: 0, delay: -0.8 * duration, duration, stagger: 0.02, ease: "power2.out" },
+          { y: 0, duration, stagger: 0.02, ease: "power2.out" },
         )
         .fromTo(
           descriptionLines,
           { y: 100 },
           { y: 0, duration, stagger: 0.02, ease: "power2.out" },
           "<",
-        );
+        )
+        .to(lineSelector, { scaleY: 1, duration: duration * 0.4 }, "<")
+        .to(dotSelector, { scale: 1, duration: duration * 0.4 }, "<")
+        .to(`.date-${item.id}`, { opacity: 1, y: 0, duration: duration * 0.4 }, "<");
 
       if (item.brand) {
         timeline.to(
