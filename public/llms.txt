@@ -1,0 +1,22 @@
+# KRONVS
+
+> Engenharia, consultoria técnica e sistemas web sob medida. Duas frentes
+> de atuação contratáveis juntas ou separadas.
+
+KRONVS Engenharia & Consultoria atua desde 2022 em projetos de engenharia,
+HVAC e climatização, planejamento e gestão de obras, manutenção e
+consultoria técnica. Desde 2026 também desenvolve sistemas web sob medida
+(dashboards, automações e integrações) a partir dos processos reais de
+cada empresa cliente.
+
+## Páginas
+
+- [Home](https://kronvs.com.br/): visão geral das duas frentes de atuação.
+- [Engenharia e Consultoria](https://kronvs.com.br/engenharia): projetos,
+  HVAC, gestão de obras, manutenção e consultoria técnica.
+- [Sistemas e Tecnologia](https://kronvs.com.br/sistemas): sistemas web
+  sob medida, dashboards e automações.
+- [Sobre a KRONVS](https://kronvs.com.br/sobre): trajetória da empresa
+  desde 2022.
+- [Contato](https://kronvs.com.br/contato): formulário para descrever um
+  projeto ou necessidade.

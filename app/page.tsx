@@ -25,6 +25,19 @@ export default function Home() {
               legalName: company.fullName,
               ...(company.siteUrl ? { url: company.siteUrl } : {}),
               description: c.seo.description,
+              ...(company.siteUrl
+                ? {
+                    hasOfferCatalog: {
+                      "@type": "OfferCatalog",
+                      name: "Soluções KRONVS",
+                      itemListElement: c.solutions.cards.map((card) => ({
+                        "@type": "Offer",
+                        itemOffered: { "@type": "Service", name: card.title, description: card.text },
+                        url: new URL(card.linkHref, company.siteUrl).href,
+                      })),
+                    },
+                  }
+                : {}),
             },
             {
               "@type": "WebSite",
