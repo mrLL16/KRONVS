@@ -8,6 +8,7 @@ import { CTASection } from "@/components/sections/cta-section";
 import { ContactLink } from "@/components/ui/contact-link";
 import { sistemasContent as c } from "@/content";
 import { JsonLd } from "@/components/ui/json-ld";
+import { BreadcrumbJsonLd } from "@/components/ui/breadcrumb-json-ld";
 import { company } from "@/data/company";
 import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata(c.seo.title, c.seo.description, "/sistemas");
@@ -26,6 +27,7 @@ export default function SystemsPage() {
           serviceType: c.services.cards.map((card) => card.title),
         }}
       />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Sistemas", path: "/sistemas" }]} />
       <PageHero
         signal="systems"
         eyebrow={c.hero.eyebrow}

@@ -7,24 +7,35 @@ import { InversionHero } from "@/components/sections/inversion-hero";
 import { pageMetadata } from "@/lib/metadata";
 import { company } from "@/data/company";
 import { homeContent as c } from "@/content";
+import { JsonLd } from "@/components/ui/json-ld";
 import styles from "./home.module.css";
 
 export const metadata = pageMetadata(c.seo.title, c.seo.description, "/");
 export default function Home() {
   return (
     <PageShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: company.name,
-            legalName: company.fullName,
-            ...(company.siteUrl ? { url: company.siteUrl } : {}),
-            description:
-              "Engenharia, consultoria e desenvolvimento de sistemas personalizados.",
-          }).replace(/</g, "\\u003c"),
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": company.siteUrl ? `${company.siteUrl}#organization` : undefined,
+              name: company.name,
+              legalName: company.fullName,
+              ...(company.siteUrl ? { url: company.siteUrl } : {}),
+              description: c.seo.description,
+            },
+            {
+              "@type": "WebSite",
+              "@id": company.siteUrl ? `${company.siteUrl}#website` : undefined,
+              name: company.name,
+              ...(company.siteUrl
+                ? { url: company.siteUrl, publisher: { "@id": `${company.siteUrl}#organization` } }
+                : {}),
+              inLanguage: "pt-BR",
+            },
+          ],
         }}
       />
       <div className={`aura-scope aura-home ${styles.page}`}>

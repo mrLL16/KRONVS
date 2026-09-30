@@ -82,7 +82,11 @@ export function AIChatButton({ transport }: { transport?: ChatTransport }) {
           <div className="chat-heading">
             <div>
               <span className="business-kicker">{chat.kicker}</span>
-              <h2 id="chat-title">{chat.title}</h2>
+              {/* p, não h2: o modal do chat fica no <header>, antes do h1 real
+                  da página no DOM, então um h2 aqui distorcia a hierarquia
+                  de títulos que o Google lê. aria-labelledby continua
+                  funcionando com qualquer elemento com esse id. */}
+              <p id="chat-title" className="chat-title-text">{chat.title}</p>
             </div>
             <button
               autoFocus

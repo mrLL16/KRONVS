@@ -4,12 +4,14 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { HeroSignal } from "@/components/sections/hero-signal";
 import { company } from "@/data/company";
 import { contatoContent as c } from "@/content";
+import { BreadcrumbJsonLd } from "@/components/ui/breadcrumb-json-ld";
 import { pageMetadata } from "@/lib/metadata";
 import styles from "./contact-experience.module.css";
 export const metadata = pageMetadata(c.seo.title, c.seo.description, "/contato");
 export default function Contact() {
   return (
     <PageShell>
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Contato", path: "/contato" }]} />
       <section className={`${styles.experience} contact-experience aura-mesh`} aria-labelledby="contact-page-title">
         <div className={styles.layout}>
           <div className={styles.copy}>
