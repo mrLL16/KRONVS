@@ -16,6 +16,8 @@ export const labels: Record<string, string> = {
   label: "Rótulo",
   // home
   hero: "Topo da página",
+  context: "Parágrafo de contexto (abaixo do texto de apoio)",
+  highlight: "Faixa de destaque (logo após o topo)",
   lead: "Texto de apoio",
   primaryButton: "Botão principal",
   secondaryButton: "Botão secundário",

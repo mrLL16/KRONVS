@@ -248,6 +248,17 @@ body.aura-route-entering .aura-site > * {
   border-color: var(--aura-line);
 }
 
+.aura-site .engineering-highlight {
+  padding-block: 22px;
+  border-top: 1px solid var(--aura-line);
+}
+
+.aura-site .engineering-highlight p {
+  max-width: none;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  line-height: 1.5;
+}
+
 .aura-section-heading {
   display: grid;
   grid-template-columns: minmax(140px, 3fr) 9fr;

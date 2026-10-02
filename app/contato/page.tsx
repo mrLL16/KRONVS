@@ -19,6 +19,7 @@ export default function Contact() {
             <h1 id="contact-page-title">{c.hero.title}</h1>
             <div className={styles.guidance}>
               <p className={styles.lead}>{c.hero.lead}</p>
+              <p className={styles.context}>{c.hero.context}</p>
               {company.email && <a className="text-link" href={`mailto:${company.email}`}>{company.email}</a>}
             </div>
             <div className={styles.signal}>

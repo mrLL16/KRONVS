@@ -35,6 +35,9 @@ export default function EngineeringPage() {
       >
         <ContactLink intent="engineering">{c.hero.button}</ContactLink>
       </PageHero>
+      <div className="container engineering-highlight">
+        <p>{c.highlight.text}</p>
+      </div>
       <ServiceGrid title={c.services.title} items={c.services.cards} />
       <EngineeringProcess />
       <section className="section container applications-section">

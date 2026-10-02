@@ -9,6 +9,9 @@
     "description": "Soluções técnicas para projetos, instalações, obras e operações que exigem método, controle e responsabilidade.",
     "button": "Falar sobre minha necessidade"
   },
+  "highlight": {
+    "text": "Projetos conduzidos em unidades de São Paulo, Brasília, Pernambuco, Rio de Janeiro e Gravataí (RS)."
+  },
   "services": {
     "title": "Soluções em Engenharia",
     "cards": [
