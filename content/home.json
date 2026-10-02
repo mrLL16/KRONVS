@@ -13,8 +13,8 @@
   },
   "solutions": {
     "eyebrow": "01 / SOLUÇÕES",
-    "titleLine1": "Duas frentes de atuação.",
-    "titleLine2Highlight": "Excelência em ambas.",
+    "titleLine1": "Engenharia e",
+    "titleLine2Highlight": "Sistemas.",
     "cards": [
       {
         "title": "Engenharia & Consultoria",
@@ -32,9 +32,9 @@
   },
   "method": {
     "eyebrow": "02 / MÉTODO",
-    "titleLine1": "A solução começa",
-    "titleLine2Highlight": "antes da ferramenta.",
-    "text": "Entender o contexto, estruturar a decisão e apoiar a aplicação no trabalho real.",
+    "titleLine1": "Começamos entendendo",
+    "titleLine2Highlight": "como você trabalha hoje.",
+    "text": "Perguntamos quem faz cada coisa, onde quebra, quais restrições existem. Depois estruturamos a decisão com dados reais. Por fim, apoiamos a aplicação no trabalho do dia a dia.",
     "steps": [
       {
         "title": "Entender",
@@ -90,9 +90,9 @@
   },
   "cta": {
     "eyebrow": "03 / PRÓXIMO PASSO",
-    "titleLine1": "Tem um problema que",
-    "titleLine2Highlight": "precisa ser estruturado?",
-    "text": "Conte o cenário. A KRONVS ajuda a transformar a necessidade em uma solução executável.",
+    "titleLine1": "Tem um problema",
+    "titleLine2Highlight": "a resolver?",
+    "text": "Descreve o cenário. KRONVS monta um plano para resolver.",
     "button": "Falar sobre"
   }
 }
