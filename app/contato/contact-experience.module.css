@@ -16,6 +16,8 @@
 .guidance p { color: var(--aura-text-soft); font-size: clamp(.8rem, .95vw, .98rem); line-height: 1.5; }
 .guidance .lead { margin: 0 0 16px; color: var(--aura-text); }
 .guidance .context { margin: 0 0 16px; }
+.whenStacked { display: none; }
+@media (max-width: 1000px) { .whenStacked { display: inline; } .whenSideBySide { display: none; } }
 .guidance > a { font-size: .8rem; }
 .formPanel { min-width: 0; max-height: 100%; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(77, 219, 208, .35) transparent; animation: formEnter 700ms cubic-bezier(.16, 1, .3, 1) 770ms both; }
 .experience .formPanel :global(.contact-form) { padding: clamp(20px, 2vw, 30px); }

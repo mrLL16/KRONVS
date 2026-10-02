@@ -7,7 +7,7 @@
     "eyebrow": "VAMOS ENTENDER A SUA NECESSIDADE",
     "title": "Contato",
     "lead": "Conte o cenário, o problema e o que precisa ser desenvolvido. Essas informações ajudam a iniciar uma conversa mais objetiva.",
-    "context": "Preencha os campos abaixo com o contexto do seu projeto. Você vê a mensagem pronta antes de enviar e decide se quer prosseguir pelo WhatsApp.",
+    "context": "Preencha os campos {abaixo|ao lado} com o contexto do seu projeto. Você vê a mensagem pronta antes de enviar e decide se quer prosseguir pelo WhatsApp.",
     "loadingForm": "Preparando formulário."
   },
   "form": {

@@ -16,7 +16,7 @@ export const labels: Record<string, string> = {
   label: "Rótulo",
   // home
   hero: "Topo da página",
-  context: "Parágrafo de contexto (abaixo do texto de apoio)",
+  context: "Parágrafo de contexto. Use {abaixo|ao lado}: o 1º aparece no celular (formulário embaixo), o 2º no computador (formulário ao lado)",
   highlight: "Faixa de destaque (logo após o topo)",
   lead: "Texto de apoio",
   primaryButton: "Botão principal",
